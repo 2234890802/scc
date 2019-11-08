@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.FoodsMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Foods" >
+    <id column="foodId" property="foodid" jdbcType="BIGINT" />
+    <result column="foodName" property="foodname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="steamed" property="steamed" jdbcType="VARCHAR" />
+    <result column="supplyDay" property="supplyday" jdbcType="VARCHAR" />
+    <result column="supplyType" property="supplytype" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    foodId, foodName, type, label, price, img, steamed, supplyDay, supplyType
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from foods
+    where foodId = #{foodid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from foods
+    where foodId = #{foodid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Foods" >
+    insert into foods (foodId, foodName, type, 
+      label, price, img, 
+      steamed, supplyDay, supplyType
+      )
+    values (#{foodid,jdbcType=BIGINT}, #{foodname,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{label,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{img,jdbcType=VARCHAR}, 
+      #{steamed,jdbcType=VARCHAR}, #{supplyday,jdbcType=VARCHAR}, #{supplytype,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Foods" >
+    insert into foods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="foodid != null" >
+        foodId,
+      </if>
+      <if test="foodname != null" >
+        foodName,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="label != null" >
+        label,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="steamed != null" >
+        steamed,
+      </if>
+      <if test="supplyday != null" >
+        supplyDay,
+      </if>
+      <if test="supplytype != null" >
+        supplyType,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="foodid != null" >
+        #{foodid,jdbcType=BIGINT},
+      </if>
+      <if test="foodname != null" >
+        #{foodname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="steamed != null" >
+        #{steamed,jdbcType=VARCHAR},
+      </if>
+      <if test="supplyday != null" >
+        #{supplyday,jdbcType=VARCHAR},
+      </if>
+      <if test="supplytype != null" >
+        #{supplytype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Foods" >
+    update foods
+    <set >
+      <if test="foodname != null" >
+        foodName = #{foodname,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="steamed != null" >
+        steamed = #{steamed,jdbcType=VARCHAR},
+      </if>
+      <if test="supplyday != null" >
+        supplyDay = #{supplyday,jdbcType=VARCHAR},
+      </if>
+      <if test="supplytype != null" >
+        supplyType = #{supplytype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where foodId = #{foodid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Foods" >
+    update foods
+    set foodName = #{foodname,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      label = #{label,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      img = #{img,jdbcType=VARCHAR},
+      steamed = #{steamed,jdbcType=VARCHAR},
+      supplyDay = #{supplyday,jdbcType=VARCHAR},
+      supplyType = #{supplytype,jdbcType=VARCHAR}
+    where foodId = #{foodid,jdbcType=BIGINT}
+  </update>
+</mapper>

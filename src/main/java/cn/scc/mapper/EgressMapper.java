@@ -1,8 +1,6 @@
-package cn.scc.dao;
+package cn.scc.mapper;
 
 import cn.scc.entity.Egress;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface EgressMapper {
     int deleteByPrimaryKey(Long id);

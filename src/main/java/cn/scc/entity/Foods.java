@@ -3,11 +3,11 @@ package cn.scc.entity;
 import java.math.BigDecimal;
 
 public class Foods {
-    private Long foodid;
+    private Long foodId;
 
-    private String foodname;
+    private String foodName;
 
-    private String type;
+    private String Type;
 
     private String label;
 
@@ -17,32 +17,32 @@ public class Foods {
 
     private String steamed;
 
-    private String supplyday;
+    private String supplyDay;
 
-    private String supplytype;
+    private String supplyType;
 
-    public Long getFoodid() {
-        return foodid;
+    public Long getFoodId() {
+        return foodId;
     }
 
-    public void setFoodid(Long foodid) {
-        this.foodid = foodid;
+    public void setFoodId(Long foodId) {
+        this.foodId = foodId;
     }
 
-    public String getFoodname() {
-        return foodname;
+    public String getFoodName() {
+        return foodName;
     }
 
-    public void setFoodname(String foodname) {
-        this.foodname = foodname == null ? null : foodname.trim();
+    public void setFoodName(String foodName) {
+        this.foodName = foodName == null ? null : foodName.trim();
     }
 
     public String getType() {
-        return type;
+        return Type;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setType(String Type) {
+        this.Type = Type == null ? null : Type.trim();
     }
 
     public String getLabel() {
@@ -77,19 +77,19 @@ public class Foods {
         this.steamed = steamed == null ? null : steamed.trim();
     }
 
-    public String getSupplyday() {
-        return supplyday;
+    public String getSupplyDay() {
+        return supplyDay;
     }
 
-    public void setSupplyday(String supplyday) {
-        this.supplyday = supplyday == null ? null : supplyday.trim();
+    public void setSupplyDay(String supplyDay) {
+        this.supplyDay = supplyDay == null ? null : supplyDay.trim();
     }
 
-    public String getSupplytype() {
-        return supplytype;
+    public String getSupplyType() {
+        return supplyType;
     }
 
-    public void setSupplytype(String supplytype) {
-        this.supplytype = supplytype == null ? null : supplytype.trim();
+    public void setSupplyType(String supplyType) {
+        this.supplyType = supplyType == null ? null : supplyType.trim();
     }
 }

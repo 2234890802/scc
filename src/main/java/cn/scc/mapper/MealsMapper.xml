@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.MealsMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Meals" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cusId" property="cusid" jdbcType="BIGINT" />
+    <result column="foodId" property="foodid" jdbcType="BIGINT" />
+    <result column="foodDate" property="fooddate" jdbcType="DATE" />
+    <result column="supplyDay" property="supplyday" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cusId, foodId, foodDate, supplyDay
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from meals
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from meals
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Meals" >
+    insert into meals (id, cusId, foodId, 
+      foodDate, supplyDay)
+    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{foodid,jdbcType=BIGINT}, 
+      #{fooddate,jdbcType=DATE}, #{supplyday,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Meals" >
+    insert into meals
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cusid != null" >
+        cusId,
+      </if>
+      <if test="foodid != null" >
+        foodId,
+      </if>
+      <if test="fooddate != null" >
+        foodDate,
+      </if>
+      <if test="supplyday != null" >
+        supplyDay,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cusid != null" >
+        #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="foodid != null" >
+        #{foodid,jdbcType=BIGINT},
+      </if>
+      <if test="fooddate != null" >
+        #{fooddate,jdbcType=DATE},
+      </if>
+      <if test="supplyday != null" >
+        #{supplyday,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Meals" >
+    update meals
+    <set >
+      <if test="cusid != null" >
+        cusId = #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="foodid != null" >
+        foodId = #{foodid,jdbcType=BIGINT},
+      </if>
+      <if test="fooddate != null" >
+        foodDate = #{fooddate,jdbcType=DATE},
+      </if>
+      <if test="supplyday != null" >
+        supplyDay = #{supplyday,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Meals" >
+    update meals
+    set cusId = #{cusid,jdbcType=BIGINT},
+      foodId = #{foodid,jdbcType=BIGINT},
+      foodDate = #{fooddate,jdbcType=DATE},
+      supplyDay = #{supplyday,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

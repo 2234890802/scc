@@ -3,29 +3,29 @@ package cn.scc.entity;
 import java.util.Date;
 
 public class Customer {
-    private Long cusid;
+    private Long cusId;
 
-    private String cusname;
+    private String cusName;
 
     private Long age;
 
     private String sex;
 
-    private String idnumber;
+    private String idNumber;
 
-    private Long bedid;
+    private Long bedId;
 
     private String room;
 
     private String floor;
 
-    private String fileno;
+    private String fileNo;
 
     private String type;
 
-    private Date bedstart;
+    private Date bedStart;
 
-    private Date bedend;
+    private Date bedEnd;
 
     private String phone;
 
@@ -45,20 +45,20 @@ public class Customer {
 
     private String status;
 
-    public Long getCusid() {
-        return cusid;
+    public Long getCusId() {
+        return cusId;
     }
 
-    public void setCusid(Long cusid) {
-        this.cusid = cusid;
+    public void setCusId(Long cusId) {
+        this.cusId = cusId;
     }
 
-    public String getCusname() {
-        return cusname;
+    public String getCusName() {
+        return cusName;
     }
 
-    public void setCusname(String cusname) {
-        this.cusname = cusname == null ? null : cusname.trim();
+    public void setCusName(String cusName) {
+        this.cusName = cusName == null ? null : cusName.trim();
     }
 
     public Long getAge() {
@@ -77,20 +77,20 @@ public class Customer {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public String getIdnumber() {
-        return idnumber;
+    public String getIdNumber() {
+        return idNumber;
     }
 
-    public void setIdnumber(String idnumber) {
-        this.idnumber = idnumber == null ? null : idnumber.trim();
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber == null ? null : idNumber.trim();
     }
 
-    public Long getBedid() {
-        return bedid;
+    public Long getBedId() {
+        return bedId;
     }
 
-    public void setBedid(Long bedid) {
-        this.bedid = bedid;
+    public void setBedId(Long bedId) {
+        this.bedId = bedId;
     }
 
     public String getRoom() {
@@ -109,12 +109,12 @@ public class Customer {
         this.floor = floor == null ? null : floor.trim();
     }
 
-    public String getFileno() {
-        return fileno;
+    public String getFileNo() {
+        return fileNo;
     }
 
-    public void setFileno(String fileno) {
-        this.fileno = fileno == null ? null : fileno.trim();
+    public void setFileNo(String fileNo) {
+        this.fileNo = fileNo == null ? null : fileNo.trim();
     }
 
     public String getType() {
@@ -125,20 +125,20 @@ public class Customer {
         this.type = type == null ? null : type.trim();
     }
 
-    public Date getBedstart() {
-        return bedstart;
+    public Date getBedStart() {
+        return bedStart;
     }
 
-    public void setBedstart(Date bedstart) {
-        this.bedstart = bedstart;
+    public void setBedStart(Date bedStart) {
+        this.bedStart = bedStart;
     }
 
-    public Date getBedend() {
-        return bedend;
+    public Date getBedEnd() {
+        return bedEnd;
     }
 
-    public void setBedend(Date bedend) {
-        this.bedend = bedend;
+    public void setBedEnd(Date bedEnd) {
+        this.bedEnd = bedEnd;
     }
 
     public String getPhone() {

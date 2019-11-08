@@ -3,9 +3,9 @@ package cn.scc.entity;
 import java.math.BigDecimal;
 
 public class Nursing {
-    private Long nurno;
+    private Long nurNo;
 
-    private String nurname;
+    private String nurName;
 
     private BigDecimal price;
 
@@ -15,20 +15,20 @@ public class Nursing {
 
     private String status;
 
-    public Long getNurno() {
-        return nurno;
+    public Long getNurNo() {
+        return nurNo;
     }
 
-    public void setNurno(Long nurno) {
-        this.nurno = nurno;
+    public void setNurNo(Long nurNo) {
+        this.nurNo = nurNo;
     }
 
-    public String getNurname() {
-        return nurname;
+    public String getNurName() {
+        return nurName;
     }
 
-    public void setNurname(String nurname) {
-        this.nurname = nurname == null ? null : nurname.trim();
+    public void setNurName(String nurName) {
+        this.nurName = nurName == null ? null : nurName.trim();
     }
 
     public BigDecimal getPrice() {

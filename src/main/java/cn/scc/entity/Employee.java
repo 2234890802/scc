@@ -3,21 +3,21 @@ package cn.scc.entity;
 import java.util.Date;
 
 public class Employee {
-    private Long empid;
+    private Long empId;
 
-    private String emppwd;
+    private String empPwd;
 
-    private String empname;
+    private String empName;
 
     private String sex;
 
-    private String emptype;
+    private String empType;
 
     private Date hiredate;
 
     private String duty;
 
-    private String dutyname;
+    private String dutyName;
 
     private String phone;
 
@@ -29,28 +29,28 @@ public class Employee {
 
     private String status;
 
-    public Long getEmpid() {
-        return empid;
+    public Long getEmpId() {
+        return empId;
     }
 
-    public void setEmpid(Long empid) {
-        this.empid = empid;
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 
-    public String getEmppwd() {
-        return emppwd;
+    public String getEmpPwd() {
+        return empPwd;
     }
 
-    public void setEmppwd(String emppwd) {
-        this.emppwd = emppwd == null ? null : emppwd.trim();
+    public void setEmpPwd(String empPwd) {
+        this.empPwd = empPwd == null ? null : empPwd.trim();
     }
 
-    public String getEmpname() {
-        return empname;
+    public String getEmpName() {
+        return empName;
     }
 
-    public void setEmpname(String empname) {
-        this.empname = empname == null ? null : empname.trim();
+    public void setEmpName(String empName) {
+        this.empName = empName == null ? null : empName.trim();
     }
 
     public String getSex() {
@@ -61,12 +61,12 @@ public class Employee {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public String getEmptype() {
-        return emptype;
+    public String getEmpType() {
+        return empType;
     }
 
-    public void setEmptype(String emptype) {
-        this.emptype = emptype == null ? null : emptype.trim();
+    public void setEmpType(String empType) {
+        this.empType = empType == null ? null : empType.trim();
     }
 
     public Date getHiredate() {
@@ -85,12 +85,12 @@ public class Employee {
         this.duty = duty == null ? null : duty.trim();
     }
 
-    public String getDutyname() {
-        return dutyname;
+    public String getDutyName() {
+        return dutyName;
     }
 
-    public void setDutyname(String dutyname) {
-        this.dutyname = dutyname == null ? null : dutyname.trim();
+    public void setDutyName(String dutyName) {
+        this.dutyName = dutyName == null ? null : dutyName.trim();
     }
 
     public String getPhone() {

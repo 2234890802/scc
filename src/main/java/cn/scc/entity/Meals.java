@@ -5,13 +5,13 @@ import java.util.Date;
 public class Meals {
     private Long id;
 
-    private Long cusid;
+    private Long cusId;
 
-    private Long foodid;
+    private Long foodId;
 
-    private Date fooddate;
+    private Date foodDate;
 
-    private String supplyday;
+    private String supplyDay;
 
     public Long getId() {
         return id;
@@ -21,35 +21,35 @@ public class Meals {
         this.id = id;
     }
 
-    public Long getCusid() {
-        return cusid;
+    public Long getCusId() {
+        return cusId;
     }
 
-    public void setCusid(Long cusid) {
-        this.cusid = cusid;
+    public void setCusId(Long cusId) {
+        this.cusId = cusId;
     }
 
-    public Long getFoodid() {
-        return foodid;
+    public Long getFoodId() {
+        return foodId;
     }
 
-    public void setFoodid(Long foodid) {
-        this.foodid = foodid;
+    public void setFoodId(Long foodId) {
+        this.foodId = foodId;
     }
 
-    public Date getFooddate() {
-        return fooddate;
+    public Date getFoodDate() {
+        return foodDate;
     }
 
-    public void setFooddate(Date fooddate) {
-        this.fooddate = fooddate;
+    public void setFoodDate(Date foodDate) {
+        this.foodDate = foodDate;
     }
 
-    public String getSupplyday() {
-        return supplyday;
+    public String getSupplyDay() {
+        return supplyDay;
     }
 
-    public void setSupplyday(String supplyday) {
-        this.supplyday = supplyday == null ? null : supplyday.trim();
+    public void setSupplyDay(String supplyDay) {
+        this.supplyDay = supplyDay == null ? null : supplyDay.trim();
     }
 }

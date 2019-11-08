@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.NurrecordMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Nursecord" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cusId" property="cusid" jdbcType="BIGINT" />
+    <result column="nurNo" property="nurno" jdbcType="BIGINT" />
+    <result column="nurEnd" property="nurend" jdbcType="TIMESTAMP" />
+    <result column="describe" property="describe" jdbcType="VARCHAR" />
+    <result column="number" property="number" jdbcType="BIGINT" />
+    <result column="empid" property="empid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, cusId, nurNo, nurEnd, describe, number, empid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from nurrecord
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from nurrecord
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Nursecord" >
+    insert into nurrecord (id, cusId, nurNo, 
+      nurEnd, describe, number, 
+      empid)
+    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{nurno,jdbcType=BIGINT}, 
+      #{nurend,jdbcType=TIMESTAMP}, #{describe,jdbcType=VARCHAR}, #{number,jdbcType=BIGINT}, 
+      #{empid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Nursecord" >
+    insert into nurrecord
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="cusid != null" >
+        cusId,
+      </if>
+      <if test="nurno != null" >
+        nurNo,
+      </if>
+      <if test="nurend != null" >
+        nurEnd,
+      </if>
+      <if test="describe != null" >
+        describe,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="empid != null" >
+        empid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cusid != null" >
+        #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="nurno != null" >
+        #{nurno,jdbcType=BIGINT},
+      </if>
+      <if test="nurend != null" >
+        #{nurend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=BIGINT},
+      </if>
+      <if test="empid != null" >
+        #{empid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Nursecord" >
+    update nurrecord
+    <set >
+      <if test="cusid != null" >
+        cusId = #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="nurno != null" >
+        nurNo = #{nurno,jdbcType=BIGINT},
+      </if>
+      <if test="nurend != null" >
+        nurEnd = #{nurend,jdbcType=TIMESTAMP},
+      </if>
+      <if test="describe != null" >
+        describe = #{describe,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=BIGINT},
+      </if>
+      <if test="empid != null" >
+        empid = #{empid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Nursecord" >
+    update nurrecord
+    set cusId = #{cusid,jdbcType=BIGINT},
+      nurNo = #{nurno,jdbcType=BIGINT},
+      nurEnd = #{nurend,jdbcType=TIMESTAMP},
+      describe = #{describe,jdbcType=VARCHAR},
+      number = #{number,jdbcType=BIGINT},
+      empid = #{empid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

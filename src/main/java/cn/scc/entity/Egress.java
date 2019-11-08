@@ -5,11 +5,11 @@ import java.util.Date;
 public class Egress {
     private Long id;
 
-    private Long cusid;
+    private Long cusID;
 
     private String type;
 
-    private Date egrdate;
+    private Date egrDate;
 
     private Date back;
 
@@ -21,7 +21,7 @@ public class Egress {
 
     private String remark;
 
-    private Date realreturn;
+    private Date realBack;
 
     public Long getId() {
         return id;
@@ -31,12 +31,12 @@ public class Egress {
         this.id = id;
     }
 
-    public Long getCusid() {
-        return cusid;
+    public Long getCusID() {
+        return cusID;
     }
 
-    public void setCusid(Long cusid) {
-        this.cusid = cusid;
+    public void setCusID(Long cusID) {
+        this.cusID = cusID;
     }
 
     public String getType() {
@@ -47,12 +47,12 @@ public class Egress {
         this.type = type == null ? null : type.trim();
     }
 
-    public Date getEgrdate() {
-        return egrdate;
+    public Date getEgrDate() {
+        return egrDate;
     }
 
-    public void setEgrdate(Date egrdate) {
-        this.egrdate = egrdate;
+    public void setEgrDate(Date egrDate) {
+        this.egrDate = egrDate;
     }
 
     public Date getBack() {
@@ -95,11 +95,11 @@ public class Egress {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    public Date getRealreturn() {
-        return realreturn;
+    public Date getRealBack() {
+        return realBack;
     }
 
-    public void setRealreturn(Date realreturn) {
-        this.realreturn = realreturn;
+    public void setRealBack(Date realBack) {
+        this.realBack = realBack;
     }
 }

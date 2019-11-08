@@ -1,8 +1,6 @@
-package cn.scc.dao;
+package cn.scc.mapper;
 
 import cn.scc.entity.Foods;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface FoodsMapper {
     int deleteByPrimaryKey(Long foodid);
