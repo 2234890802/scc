@@ -3,13 +3,13 @@
 <mapper namespace="cn.scc.mapper.MealsMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Meals" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="cusId" property="cusid" jdbcType="BIGINT" />
-    <result column="foodId" property="foodid" jdbcType="BIGINT" />
-    <result column="foodDate" property="fooddate" jdbcType="DATE" />
-    <result column="supplyDay" property="supplyday" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="food_id" property="foodId" jdbcType="BIGINT" />
+    <result column="food_date" property="foodDate" jdbcType="DATE" />
+    <result column="supply_day" property="supplyDay" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, cusId, foodId, foodDate, supplyDay
+    id, customer_id, food_id, food_date, supply_day
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -22,10 +22,10 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Meals" >
-    insert into meals (id, cusId, foodId, 
-      foodDate, supplyDay)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{foodid,jdbcType=BIGINT}, 
-      #{fooddate,jdbcType=DATE}, #{supplyday,jdbcType=VARCHAR})
+    insert into meals (id, customer_id, food_id, 
+      food_date, supply_day)
+    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{foodId,jdbcType=BIGINT}, 
+      #{foodDate,jdbcType=DATE}, #{supplyDay,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Meals" >
     insert into meals
@@ -33,61 +33,61 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null" >
-        cusId,
+      <if test="customerId != null" >
+        customer_id,
       </if>
-      <if test="foodid != null" >
-        foodId,
+      <if test="foodId != null" >
+        food_id,
       </if>
-      <if test="fooddate != null" >
-        foodDate,
+      <if test="foodDate != null" >
+        food_date,
       </if>
-      <if test="supplyday != null" >
-        supplyDay,
+      <if test="supplyDay != null" >
+        supply_day,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null" >
-        #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="foodid != null" >
-        #{foodid,jdbcType=BIGINT},
+      <if test="foodId != null" >
+        #{foodId,jdbcType=BIGINT},
       </if>
-      <if test="fooddate != null" >
-        #{fooddate,jdbcType=DATE},
+      <if test="foodDate != null" >
+        #{foodDate,jdbcType=DATE},
       </if>
-      <if test="supplyday != null" >
-        #{supplyday,jdbcType=VARCHAR},
+      <if test="supplyDay != null" >
+        #{supplyDay,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Meals" >
     update meals
     <set >
-      <if test="cusid != null" >
-        cusId = #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="foodid != null" >
-        foodId = #{foodid,jdbcType=BIGINT},
+      <if test="foodId != null" >
+        food_id = #{foodId,jdbcType=BIGINT},
       </if>
-      <if test="fooddate != null" >
-        foodDate = #{fooddate,jdbcType=DATE},
+      <if test="foodDate != null" >
+        food_date = #{foodDate,jdbcType=DATE},
       </if>
-      <if test="supplyday != null" >
-        supplyDay = #{supplyday,jdbcType=VARCHAR},
+      <if test="supplyDay != null" >
+        supply_day = #{supplyDay,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Meals" >
     update meals
-    set cusId = #{cusid,jdbcType=BIGINT},
-      foodId = #{foodid,jdbcType=BIGINT},
-      foodDate = #{fooddate,jdbcType=DATE},
-      supplyDay = #{supplyday,jdbcType=VARCHAR}
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      food_id = #{foodId,jdbcType=BIGINT},
+      food_date = #{foodDate,jdbcType=DATE},
+      supply_day = #{supplyDay,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

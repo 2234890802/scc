@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.EmployeeMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Employee" >
-    <id column="empId" property="empid" jdbcType="BIGINT" />
-    <result column="empPwd" property="emppwd" jdbcType="VARCHAR" />
-    <result column="empName" property="empname" jdbcType="VARCHAR" />
+    <id column="emp_id" property="empId" jdbcType="BIGINT" />
+    <result column="emp_pwd" property="empPwd" jdbcType="VARCHAR" />
+    <result column="emp_name" property="empName" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
-    <result column="empType" property="emptype" jdbcType="VARCHAR" />
+    <result column="emp_type" property="empType" jdbcType="VARCHAR" />
     <result column="hiredate" property="hiredate" jdbcType="DATE" />
     <result column="duty" property="duty" jdbcType="VARCHAR" />
-    <result column="dutyName" property="dutyname" jdbcType="VARCHAR" />
+    <result column="duty_name" property="dutyName" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
@@ -17,48 +17,48 @@
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    empId, empPwd, empName, sex, empType, hiredate, duty, dutyName, phone, introduction, 
+    emp_id, emp_pwd, emp_name, sex, emp_type, hiredate, duty, duty_name, phone, introduction, 
     remark, power, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from employee
-    where empId = #{empid,jdbcType=BIGINT}
+    where emp_id = #{empId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from employee
-    where empId = #{empid,jdbcType=BIGINT}
+    where emp_id = #{empId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Employee" >
-    insert into employee (empId, empPwd, empName, 
-      sex, empType, hiredate, 
-      duty, dutyName, phone, 
+    insert into employee (emp_id, emp_pwd, emp_name, 
+      sex, emp_type, hiredate, 
+      duty, duty_name, phone, 
       introduction, remark, power, 
       status)
-    values (#{empid,jdbcType=BIGINT}, #{emppwd,jdbcType=VARCHAR}, #{empname,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=VARCHAR}, #{emptype,jdbcType=VARCHAR}, #{hiredate,jdbcType=DATE}, 
-      #{duty,jdbcType=VARCHAR}, #{dutyname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+    values (#{empId,jdbcType=BIGINT}, #{empPwd,jdbcType=VARCHAR}, #{empName,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{empType,jdbcType=VARCHAR}, #{hiredate,jdbcType=DATE}, 
+      #{duty,jdbcType=VARCHAR}, #{dutyName,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
       #{introduction,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{power,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Employee" >
     insert into employee
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="empid != null" >
-        empId,
+      <if test="empId != null" >
+        emp_id,
       </if>
-      <if test="emppwd != null" >
-        empPwd,
+      <if test="empPwd != null" >
+        emp_pwd,
       </if>
-      <if test="empname != null" >
-        empName,
+      <if test="empName != null" >
+        emp_name,
       </if>
       <if test="sex != null" >
         sex,
       </if>
-      <if test="emptype != null" >
-        empType,
+      <if test="empType != null" >
+        emp_type,
       </if>
       <if test="hiredate != null" >
         hiredate,
@@ -66,8 +66,8 @@
       <if test="duty != null" >
         duty,
       </if>
-      <if test="dutyname != null" >
-        dutyName,
+      <if test="dutyName != null" >
+        duty_name,
       </if>
       <if test="phone != null" >
         phone,
@@ -86,20 +86,20 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="empid != null" >
-        #{empid,jdbcType=BIGINT},
+      <if test="empId != null" >
+        #{empId,jdbcType=BIGINT},
       </if>
-      <if test="emppwd != null" >
-        #{emppwd,jdbcType=VARCHAR},
+      <if test="empPwd != null" >
+        #{empPwd,jdbcType=VARCHAR},
       </if>
-      <if test="empname != null" >
-        #{empname,jdbcType=VARCHAR},
+      <if test="empName != null" >
+        #{empName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="emptype != null" >
-        #{emptype,jdbcType=VARCHAR},
+      <if test="empType != null" >
+        #{empType,jdbcType=VARCHAR},
       </if>
       <if test="hiredate != null" >
         #{hiredate,jdbcType=DATE},
@@ -107,8 +107,8 @@
       <if test="duty != null" >
         #{duty,jdbcType=VARCHAR},
       </if>
-      <if test="dutyname != null" >
-        #{dutyname,jdbcType=VARCHAR},
+      <if test="dutyName != null" >
+        #{dutyName,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
@@ -130,17 +130,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Employee" >
     update employee
     <set >
-      <if test="emppwd != null" >
-        empPwd = #{emppwd,jdbcType=VARCHAR},
+      <if test="empPwd != null" >
+        emp_pwd = #{empPwd,jdbcType=VARCHAR},
       </if>
-      <if test="empname != null" >
-        empName = #{empname,jdbcType=VARCHAR},
+      <if test="empName != null" >
+        emp_name = #{empName,jdbcType=VARCHAR},
       </if>
       <if test="sex != null" >
         sex = #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="emptype != null" >
-        empType = #{emptype,jdbcType=VARCHAR},
+      <if test="empType != null" >
+        emp_type = #{empType,jdbcType=VARCHAR},
       </if>
       <if test="hiredate != null" >
         hiredate = #{hiredate,jdbcType=DATE},
@@ -148,8 +148,8 @@
       <if test="duty != null" >
         duty = #{duty,jdbcType=VARCHAR},
       </if>
-      <if test="dutyname != null" >
-        dutyName = #{dutyname,jdbcType=VARCHAR},
+      <if test="dutyName != null" >
+        duty_name = #{dutyName,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
@@ -167,22 +167,22 @@
         status = #{status,jdbcType=VARCHAR},
       </if>
     </set>
-    where empId = #{empid,jdbcType=BIGINT}
+    where emp_id = #{empId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Employee" >
     update employee
-    set empPwd = #{emppwd,jdbcType=VARCHAR},
-      empName = #{empname,jdbcType=VARCHAR},
+    set emp_pwd = #{empPwd,jdbcType=VARCHAR},
+      emp_name = #{empName,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=VARCHAR},
-      empType = #{emptype,jdbcType=VARCHAR},
+      emp_type = #{empType,jdbcType=VARCHAR},
       hiredate = #{hiredate,jdbcType=DATE},
       duty = #{duty,jdbcType=VARCHAR},
-      dutyName = #{dutyname,jdbcType=VARCHAR},
+      duty_name = #{dutyName,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       introduction = #{introduction,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       power = #{power,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR}
-    where empId = #{empid,jdbcType=BIGINT}
+    where emp_id = #{empId,jdbcType=BIGINT}
   </update>
 </mapper>

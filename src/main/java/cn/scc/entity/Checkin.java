@@ -5,15 +5,15 @@ import java.util.Date;
 public class Checkin {
     private Long id;
 
-    private Long cusId;
+    private Long customerId;
+
+    private Long bedId;
 
     private Date bedStart;
 
     private Date bedEnd;
 
-    private String content;
-
-    private Long bedId;
+    private String remark;
 
     public Long getId() {
         return id;
@@ -23,12 +23,20 @@ public class Checkin {
         this.id = id;
     }
 
-    public Long getCusId() {
-        return cusId;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCusId(Long cusId) {
-        this.cusId = cusId;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
+    }
+
+    public Long getBedId() {
+        return bedId;
+    }
+
+    public void setBedId(Long bedId) {
+        this.bedId = bedId;
     }
 
     public Date getBedStart() {
@@ -47,19 +55,11 @@ public class Checkin {
         this.bedEnd = bedEnd;
     }
 
-    public String getContent() {
-        return content;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
-
-    public Long getBedId() {
-        return bedId;
-    }
-
-    public void setBedId(Long bedId) {
-        this.bedId = bedId;
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }

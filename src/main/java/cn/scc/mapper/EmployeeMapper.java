@@ -3,13 +3,13 @@ package cn.scc.mapper;
 import cn.scc.entity.Employee;
 
 public interface EmployeeMapper {
-    int deleteByPrimaryKey(Long empid);
+    int deleteByPrimaryKey(Long empId);
 
     int insert(Employee record);
 
     int insertSelective(Employee record);
 
-    Employee selectByPrimaryKey(Long empid);
+    Employee selectByPrimaryKey(Long empId);
 
     int updateByPrimaryKeySelective(Employee record);
 

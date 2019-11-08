@@ -7,9 +7,9 @@ public class Foods {
 
     private String foodName;
 
-    private String Type;
+    private String foodType;
 
-    private String label;
+    private String tag;
 
     private BigDecimal price;
 
@@ -37,20 +37,20 @@ public class Foods {
         this.foodName = foodName == null ? null : foodName.trim();
     }
 
-    public String getType() {
-        return Type;
+    public String getFoodType() {
+        return foodType;
     }
 
-    public void setType(String Type) {
-        this.Type = Type == null ? null : Type.trim();
+    public void setFoodType(String foodType) {
+        this.foodType = foodType == null ? null : foodType.trim();
     }
 
-    public String getLabel() {
-        return label;
+    public String getTag() {
+        return tag;
     }
 
-    public void setLabel(String label) {
-        this.label = label == null ? null : label.trim();
+    public void setTag(String tag) {
+        this.tag = tag == null ? null : tag.trim();
     }
 
     public BigDecimal getPrice() {

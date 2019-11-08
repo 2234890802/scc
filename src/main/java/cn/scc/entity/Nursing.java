@@ -3,32 +3,32 @@ package cn.scc.entity;
 import java.math.BigDecimal;
 
 public class Nursing {
-    private Long nurNo;
+    private Long nursingNo;
 
-    private String nurName;
+    private String nursingName;
 
     private BigDecimal price;
 
-    private String describe;
+    private String remark;
 
     private String service;
 
     private String status;
 
-    public Long getNurNo() {
-        return nurNo;
+    public Long getNursingNo() {
+        return nursingNo;
     }
 
-    public void setNurNo(Long nurNo) {
-        this.nurNo = nurNo;
+    public void setNursingNo(Long nursingNo) {
+        this.nursingNo = nursingNo;
     }
 
-    public String getNurName() {
-        return nurName;
+    public String getNursingName() {
+        return nursingName;
     }
 
-    public void setNurName(String nurName) {
-        this.nurName = nurName == null ? null : nurName.trim();
+    public void setNursingName(String nursingName) {
+        this.nursingName = nursingName == null ? null : nursingName.trim();
     }
 
     public BigDecimal getPrice() {
@@ -39,12 +39,12 @@ public class Nursing {
         this.price = price;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe == null ? null : describe.trim();
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public String getService() {

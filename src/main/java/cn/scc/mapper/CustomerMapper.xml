@@ -2,18 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.CustomerMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Customer" >
-    <id column="cusId" property="cusid" jdbcType="BIGINT" />
-    <result column="cusName" property="cusname" jdbcType="VARCHAR" />
+    <id column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="customer_name" property="customerName" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="BIGINT" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
-    <result column="idNumber" property="idnumber" jdbcType="VARCHAR" />
-    <result column="bedId" property="bedid" jdbcType="BIGINT" />
+    <result column="id_number" property="idNumber" jdbcType="VARCHAR" />
+    <result column="bed_id" property="bedId" jdbcType="BIGINT" />
     <result column="room" property="room" jdbcType="VARCHAR" />
     <result column="floor" property="floor" jdbcType="VARCHAR" />
-    <result column="fileNo" property="fileno" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="bedStart" property="bedstart" jdbcType="DATE" />
-    <result column="bedEnd" property="bedend" jdbcType="DATE" />
+    <result column="file_no" property="fileNo" jdbcType="VARCHAR" />
+    <result column="customer_type" property="customerType" jdbcType="VARCHAR" />
+    <result column="bed_start" property="bedStart" jdbcType="DATE" />
+    <result column="bed_end" property="bedEnd" jdbcType="DATE" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="birthday" property="birthday" jdbcType="DATE" />
     <result column="high" property="high" jdbcType="BIGINT" />
@@ -25,43 +25,46 @@
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    cusId, cusName, age, sex, idNumber, bedId, room, floor, fileNo, type, bedStart, bedEnd, 
-    phone, birthday, high, wedlock, weight, blood, photo, remark, status
+    customer_id, customer_name, age, sex, id_number, bed_id, room, floor, file_no, customer_type, 
+    bed_start, bed_end, phone, birthday, high, wedlock, weight, blood, photo, remark, 
+    status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from customer
-    where cusId = #{cusid,jdbcType=BIGINT}
+    where customer_id = #{customerId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from customer
-    where cusId = #{cusid,jdbcType=BIGINT}
+    where customer_id = #{customerId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Customer" >
-    insert into customer (cusId, cusName, age, 
-      sex, idNumber, bedId, 
-      room, floor, fileNo, 
-      type, bedStart, bedEnd, phone, 
-      birthday, high, wedlock, 
-      weight, blood, photo, 
-      remark, status)
-    values (#{cusid,jdbcType=BIGINT}, #{cusname,jdbcType=VARCHAR}, #{age,jdbcType=BIGINT}, 
-      #{sex,jdbcType=VARCHAR}, #{idnumber,jdbcType=VARCHAR}, #{bedid,jdbcType=BIGINT}, 
-      #{room,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, #{fileno,jdbcType=VARCHAR}, 
-      #{type,jdbcType=VARCHAR}, #{bedstart,jdbcType=DATE}, #{bedend,jdbcType=DATE}, #{phone,jdbcType=VARCHAR}, 
-      #{birthday,jdbcType=DATE}, #{high,jdbcType=BIGINT}, #{wedlock,jdbcType=VARCHAR}, 
-      #{weight,jdbcType=BIGINT}, #{blood,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, 
-      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+    insert into customer (customer_id, customer_name, age, 
+      sex, id_number, bed_id, 
+      room, floor, file_no, 
+      customer_type, bed_start, bed_end, 
+      phone, birthday, high, 
+      wedlock, weight, blood, 
+      photo, remark, status
+      )
+    values (#{customerId,jdbcType=BIGINT}, #{customerName,jdbcType=VARCHAR}, #{age,jdbcType=BIGINT}, 
+      #{sex,jdbcType=VARCHAR}, #{idNumber,jdbcType=VARCHAR}, #{bedId,jdbcType=BIGINT}, 
+      #{room,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, #{fileNo,jdbcType=VARCHAR}, 
+      #{customerType,jdbcType=VARCHAR}, #{bedStart,jdbcType=DATE}, #{bedEnd,jdbcType=DATE}, 
+      #{phone,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{high,jdbcType=BIGINT}, 
+      #{wedlock,jdbcType=VARCHAR}, #{weight,jdbcType=BIGINT}, #{blood,jdbcType=VARCHAR}, 
+      #{photo,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Customer" >
     insert into customer
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="cusid != null" >
-        cusId,
+      <if test="customerId != null" >
+        customer_id,
       </if>
-      <if test="cusname != null" >
-        cusName,
+      <if test="customerName != null" >
+        customer_name,
       </if>
       <if test="age != null" >
         age,
@@ -69,11 +72,11 @@
       <if test="sex != null" >
         sex,
       </if>
-      <if test="idnumber != null" >
-        idNumber,
+      <if test="idNumber != null" >
+        id_number,
       </if>
-      <if test="bedid != null" >
-        bedId,
+      <if test="bedId != null" >
+        bed_id,
       </if>
       <if test="room != null" >
         room,
@@ -81,17 +84,17 @@
       <if test="floor != null" >
         floor,
       </if>
-      <if test="fileno != null" >
-        fileNo,
+      <if test="fileNo != null" >
+        file_no,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="customerType != null" >
+        customer_type,
       </if>
-      <if test="bedstart != null" >
-        bedStart,
+      <if test="bedStart != null" >
+        bed_start,
       </if>
-      <if test="bedend != null" >
-        bedEnd,
+      <if test="bedEnd != null" >
+        bed_end,
       </if>
       <if test="phone != null" >
         phone,
@@ -122,11 +125,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="cusid != null" >
-        #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="cusname != null" >
-        #{cusname,jdbcType=VARCHAR},
+      <if test="customerName != null" >
+        #{customerName,jdbcType=VARCHAR},
       </if>
       <if test="age != null" >
         #{age,jdbcType=BIGINT},
@@ -134,11 +137,11 @@
       <if test="sex != null" >
         #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="idnumber != null" >
-        #{idnumber,jdbcType=VARCHAR},
+      <if test="idNumber != null" >
+        #{idNumber,jdbcType=VARCHAR},
       </if>
-      <if test="bedid != null" >
-        #{bedid,jdbcType=BIGINT},
+      <if test="bedId != null" >
+        #{bedId,jdbcType=BIGINT},
       </if>
       <if test="room != null" >
         #{room,jdbcType=VARCHAR},
@@ -146,17 +149,17 @@
       <if test="floor != null" >
         #{floor,jdbcType=VARCHAR},
       </if>
-      <if test="fileno != null" >
-        #{fileno,jdbcType=VARCHAR},
+      <if test="fileNo != null" >
+        #{fileNo,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
+      <if test="customerType != null" >
+        #{customerType,jdbcType=VARCHAR},
       </if>
-      <if test="bedstart != null" >
-        #{bedstart,jdbcType=DATE},
+      <if test="bedStart != null" >
+        #{bedStart,jdbcType=DATE},
       </if>
-      <if test="bedend != null" >
-        #{bedend,jdbcType=DATE},
+      <if test="bedEnd != null" >
+        #{bedEnd,jdbcType=DATE},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
@@ -190,8 +193,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Customer" >
     update customer
     <set >
-      <if test="cusname != null" >
-        cusName = #{cusname,jdbcType=VARCHAR},
+      <if test="customerName != null" >
+        customer_name = #{customerName,jdbcType=VARCHAR},
       </if>
       <if test="age != null" >
         age = #{age,jdbcType=BIGINT},
@@ -199,11 +202,11 @@
       <if test="sex != null" >
         sex = #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="idnumber != null" >
-        idNumber = #{idnumber,jdbcType=VARCHAR},
+      <if test="idNumber != null" >
+        id_number = #{idNumber,jdbcType=VARCHAR},
       </if>
-      <if test="bedid != null" >
-        bedId = #{bedid,jdbcType=BIGINT},
+      <if test="bedId != null" >
+        bed_id = #{bedId,jdbcType=BIGINT},
       </if>
       <if test="room != null" >
         room = #{room,jdbcType=VARCHAR},
@@ -211,17 +214,17 @@
       <if test="floor != null" >
         floor = #{floor,jdbcType=VARCHAR},
       </if>
-      <if test="fileno != null" >
-        fileNo = #{fileno,jdbcType=VARCHAR},
+      <if test="fileNo != null" >
+        file_no = #{fileNo,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
+      <if test="customerType != null" >
+        customer_type = #{customerType,jdbcType=VARCHAR},
       </if>
-      <if test="bedstart != null" >
-        bedStart = #{bedstart,jdbcType=DATE},
+      <if test="bedStart != null" >
+        bed_start = #{bedStart,jdbcType=DATE},
       </if>
-      <if test="bedend != null" >
-        bedEnd = #{bedend,jdbcType=DATE},
+      <if test="bedEnd != null" >
+        bed_end = #{bedEnd,jdbcType=DATE},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
@@ -251,21 +254,21 @@
         status = #{status,jdbcType=VARCHAR},
       </if>
     </set>
-    where cusId = #{cusid,jdbcType=BIGINT}
+    where customer_id = #{customerId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Customer" >
     update customer
-    set cusName = #{cusname,jdbcType=VARCHAR},
+    set customer_name = #{customerName,jdbcType=VARCHAR},
       age = #{age,jdbcType=BIGINT},
       sex = #{sex,jdbcType=VARCHAR},
-      idNumber = #{idnumber,jdbcType=VARCHAR},
-      bedId = #{bedid,jdbcType=BIGINT},
+      id_number = #{idNumber,jdbcType=VARCHAR},
+      bed_id = #{bedId,jdbcType=BIGINT},
       room = #{room,jdbcType=VARCHAR},
       floor = #{floor,jdbcType=VARCHAR},
-      fileNo = #{fileno,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
-      bedStart = #{bedstart,jdbcType=DATE},
-      bedEnd = #{bedend,jdbcType=DATE},
+      file_no = #{fileNo,jdbcType=VARCHAR},
+      customer_type = #{customerType,jdbcType=VARCHAR},
+      bed_start = #{bedStart,jdbcType=DATE},
+      bed_end = #{bedEnd,jdbcType=DATE},
       phone = #{phone,jdbcType=VARCHAR},
       birthday = #{birthday,jdbcType=DATE},
       high = #{high,jdbcType=BIGINT},
@@ -275,6 +278,6 @@
       photo = #{photo,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR}
-    where cusId = #{cusid,jdbcType=BIGINT}
+    where customer_id = #{customerId,jdbcType=BIGINT}
   </update>
 </mapper>

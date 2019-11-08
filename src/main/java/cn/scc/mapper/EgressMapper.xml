@@ -3,18 +3,19 @@
 <mapper namespace="cn.scc.mapper.EgressMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Egress" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="cusId" property="cusid" jdbcType="BIGINT" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="egrDate" property="egrdate" jdbcType="DATE" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="egress_type" property="egressType" jdbcType="VARCHAR" />
+    <result column="egress_date" property="egressDate" jdbcType="DATE" />
     <result column="back" property="back" jdbcType="DATE" />
     <result column="companion" property="companion" jdbcType="VARCHAR" />
     <result column="relation" property="relation" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="realBack" property="realback" jdbcType="DATE" />
+    <result column="real_back" property="realBack" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, cusId, type, egrDate, back, companion, relation, phone, remark, realBack
+    id, customer_id, egress_type, egress_date, back, companion, relation, phone, remark, 
+    real_back
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -27,14 +28,14 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Egress" >
-    insert into egress (id, cusId, type, 
-      egrDate, back, companion, 
+    insert into egress (id, customer_id, egress_type, 
+      egress_date, back, companion, 
       relation, phone, remark, 
-      realBack)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
-      #{egrdate,jdbcType=DATE}, #{back,jdbcType=DATE}, #{companion,jdbcType=VARCHAR}, 
+      real_back)
+    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{egressType,jdbcType=VARCHAR}, 
+      #{egressDate,jdbcType=DATE}, #{back,jdbcType=DATE}, #{companion,jdbcType=VARCHAR}, 
       #{relation,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{realback,jdbcType=DATE})
+      #{realBack,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Egress" >
     insert into egress
@@ -42,14 +43,14 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null" >
-        cusId,
+      <if test="customerId != null" >
+        customer_id,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="egressType != null" >
+        egress_type,
       </if>
-      <if test="egrdate != null" >
-        egrDate,
+      <if test="egressDate != null" >
+        egress_date,
       </if>
       <if test="back != null" >
         back,
@@ -66,22 +67,22 @@
       <if test="remark != null" >
         remark,
       </if>
-      <if test="realback != null" >
-        realBack,
+      <if test="realBack != null" >
+        real_back,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null" >
-        #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
+      <if test="egressType != null" >
+        #{egressType,jdbcType=VARCHAR},
       </if>
-      <if test="egrdate != null" >
-        #{egrdate,jdbcType=DATE},
+      <if test="egressDate != null" >
+        #{egressDate,jdbcType=DATE},
       </if>
       <if test="back != null" >
         #{back,jdbcType=DATE},
@@ -98,22 +99,22 @@
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="realback != null" >
-        #{realback,jdbcType=DATE},
+      <if test="realBack != null" >
+        #{realBack,jdbcType=DATE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Egress" >
     update egress
     <set >
-      <if test="cusid != null" >
-        cusId = #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
+      <if test="egressType != null" >
+        egress_type = #{egressType,jdbcType=VARCHAR},
       </if>
-      <if test="egrdate != null" >
-        egrDate = #{egrdate,jdbcType=DATE},
+      <if test="egressDate != null" >
+        egress_date = #{egressDate,jdbcType=DATE},
       </if>
       <if test="back != null" >
         back = #{back,jdbcType=DATE},
@@ -130,23 +131,23 @@
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="realback != null" >
-        realBack = #{realback,jdbcType=DATE},
+      <if test="realBack != null" >
+        real_back = #{realBack,jdbcType=DATE},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Egress" >
     update egress
-    set cusId = #{cusid,jdbcType=BIGINT},
-      type = #{type,jdbcType=VARCHAR},
-      egrDate = #{egrdate,jdbcType=DATE},
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      egress_type = #{egressType,jdbcType=VARCHAR},
+      egress_date = #{egressDate,jdbcType=DATE},
       back = #{back,jdbcType=DATE},
       companion = #{companion,jdbcType=VARCHAR},
       relation = #{relation,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
-      realBack = #{realback,jdbcType=DATE}
+      real_back = #{realBack,jdbcType=DATE}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

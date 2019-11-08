@@ -5,7 +5,7 @@ import java.util.Date;
 public class Meals {
     private Long id;
 
-    private Long cusId;
+    private Long customerId;
 
     private Long foodId;
 
@@ -21,12 +21,12 @@ public class Meals {
         this.id = id;
     }
 
-    public Long getCusId() {
-        return cusId;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCusId(Long cusId) {
-        this.cusId = cusId;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
     public Long getFoodId() {

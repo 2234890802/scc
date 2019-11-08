@@ -5,13 +5,13 @@ import java.util.Date;
 public class Retreat {
     private Long id;
 
-    private Long cusId;
+    private Long customerId;
 
-    private String type;
+    private String retreatType;
 
     private String reason;
 
-    private Date retDate;
+    private Date retreatDate;
 
     private Date applyDate;
 
@@ -25,20 +25,20 @@ public class Retreat {
         this.id = id;
     }
 
-    public Long getCusId() {
-        return cusId;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCusId(Long cusId) {
-        this.cusId = cusId;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
-    public String getType() {
-        return type;
+    public String getRetreatType() {
+        return retreatType;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setRetreatType(String retreatType) {
+        this.retreatType = retreatType == null ? null : retreatType.trim();
     }
 
     public String getReason() {
@@ -49,12 +49,12 @@ public class Retreat {
         this.reason = reason == null ? null : reason.trim();
     }
 
-    public Date getRetDate() {
-        return retDate;
+    public Date getRetreatDate() {
+        return retreatDate;
     }
 
-    public void setRetDate(Date retDate) {
-        this.retDate = retDate;
+    public void setRetreatDate(Date retreatDate) {
+        this.retreatDate = retreatDate;
     }
 
     public Date getApplyDate() {

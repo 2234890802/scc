@@ -3,13 +3,13 @@ package cn.scc.mapper;
 import cn.scc.entity.Customer;
 
 public interface CustomerMapper {
-    int deleteByPrimaryKey(Long cusid);
+    int deleteByPrimaryKey(Long customerId);
 
     int insert(Customer record);
 
     int insertSelective(Customer record);
 
-    Customer selectByPrimaryKey(Long cusid);
+    Customer selectByPrimaryKey(Long customerId);
 
     int updateByPrimaryKeySelective(Customer record);
 

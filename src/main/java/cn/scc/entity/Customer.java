@@ -3,9 +3,9 @@ package cn.scc.entity;
 import java.util.Date;
 
 public class Customer {
-    private Long cusId;
+    private Long customerId;
 
-    private String cusName;
+    private String customerName;
 
     private Long age;
 
@@ -21,7 +21,7 @@ public class Customer {
 
     private String fileNo;
 
-    private String type;
+    private String customerType;
 
     private Date bedStart;
 
@@ -45,20 +45,20 @@ public class Customer {
 
     private String status;
 
-    public Long getCusId() {
-        return cusId;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCusId(Long cusId) {
-        this.cusId = cusId;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
-    public String getCusName() {
-        return cusName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setCusName(String cusName) {
-        this.cusName = cusName == null ? null : cusName.trim();
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName == null ? null : customerName.trim();
     }
 
     public Long getAge() {
@@ -117,12 +117,12 @@ public class Customer {
         this.fileNo = fileNo == null ? null : fileNo.trim();
     }
 
-    public String getType() {
-        return type;
+    public String getCustomerType() {
+        return customerType;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType == null ? null : customerType.trim();
     }
 
     public Date getBedStart() {

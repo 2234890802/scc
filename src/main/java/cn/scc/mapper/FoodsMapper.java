@@ -3,13 +3,13 @@ package cn.scc.mapper;
 import cn.scc.entity.Foods;
 
 public interface FoodsMapper {
-    int deleteByPrimaryKey(Long foodid);
+    int deleteByPrimaryKey(Long foodId);
 
     int insert(Foods record);
 
     int insertSelective(Foods record);
 
-    Foods selectByPrimaryKey(Long foodid);
+    Foods selectByPrimaryKey(Long foodId);
 
     int updateByPrimaryKeySelective(Foods record);
 

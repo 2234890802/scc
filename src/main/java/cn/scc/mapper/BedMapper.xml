@@ -2,35 +2,35 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.BedMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Bed" >
-    <id column="bedId" property="bedid" jdbcType="BIGINT" />
+    <id column="bed_id" property="bedId" jdbcType="BIGINT" />
     <result column="room" property="room" jdbcType="VARCHAR" />
     <result column="floor" property="floor" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    bedId, room, floor, status
+    bed_id, room, floor, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from bed
-    where bedId = #{bedid,jdbcType=BIGINT}
+    where bed_id = #{bedId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from bed
-    where bedId = #{bedid,jdbcType=BIGINT}
+    where bed_id = #{bedId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Bed" >
-    insert into bed (bedId, room, floor, 
+    insert into bed (bed_id, room, floor, 
       status)
-    values (#{bedid,jdbcType=BIGINT}, #{room,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, 
+    values (#{bedId,jdbcType=BIGINT}, #{room,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Bed" >
     insert into bed
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="bedid != null" >
-        bedId,
+      <if test="bedId != null" >
+        bed_id,
       </if>
       <if test="room != null" >
         room,
@@ -43,8 +43,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="bedid != null" >
-        #{bedid,jdbcType=BIGINT},
+      <if test="bedId != null" >
+        #{bedId,jdbcType=BIGINT},
       </if>
       <if test="room != null" >
         #{room,jdbcType=VARCHAR},
@@ -70,13 +70,13 @@
         status = #{status,jdbcType=VARCHAR},
       </if>
     </set>
-    where bedId = #{bedid,jdbcType=BIGINT}
+    where bed_id = #{bedId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Bed" >
     update bed
     set room = #{room,jdbcType=VARCHAR},
       floor = #{floor,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR}
-    where bedId = #{bedid,jdbcType=BIGINT}
+    where bed_id = #{bedId,jdbcType=BIGINT}
   </update>
 </mapper>

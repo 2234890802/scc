@@ -3,15 +3,15 @@
 <mapper namespace="cn.scc.mapper.RetreatMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="cusId" property="cusid" jdbcType="BIGINT" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="retreat_type" property="retreatType" jdbcType="VARCHAR" />
     <result column="reason" property="reason" jdbcType="VARCHAR" />
-    <result column="retDate" property="retdate" jdbcType="DATE" />
-    <result column="applyDate" property="applydate" jdbcType="DATE" />
+    <result column="retreat_date" property="retreatDate" jdbcType="DATE" />
+    <result column="apply_date" property="applyDate" jdbcType="DATE" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, cusId, type, reason, retDate, applyDate, remark
+    id, customer_id, retreat_type, reason, retreat_date, apply_date, remark
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -24,11 +24,11 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Retreat" >
-    insert into retreat (id, cusId, type, 
-      reason, retDate, applyDate, 
+    insert into retreat (id, customer_id, retreat_type, 
+      reason, retreat_date, apply_date, 
       remark)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
-      #{reason,jdbcType=VARCHAR}, #{retdate,jdbcType=DATE}, #{applydate,jdbcType=DATE}, 
+    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{retreatType,jdbcType=VARCHAR}, 
+      #{reason,jdbcType=VARCHAR}, #{retreatDate,jdbcType=DATE}, #{applyDate,jdbcType=DATE}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Retreat" >
@@ -37,20 +37,20 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null" >
-        cusId,
+      <if test="customerId != null" >
+        customer_id,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="retreatType != null" >
+        retreat_type,
       </if>
       <if test="reason != null" >
         reason,
       </if>
-      <if test="retdate != null" >
-        retDate,
+      <if test="retreatDate != null" >
+        retreat_date,
       </if>
-      <if test="applydate != null" >
-        applyDate,
+      <if test="applyDate != null" >
+        apply_date,
       </if>
       <if test="remark != null" >
         remark,
@@ -60,20 +60,20 @@
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null" >
-        #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
+      <if test="retreatType != null" >
+        #{retreatType,jdbcType=VARCHAR},
       </if>
       <if test="reason != null" >
         #{reason,jdbcType=VARCHAR},
       </if>
-      <if test="retdate != null" >
-        #{retdate,jdbcType=DATE},
+      <if test="retreatDate != null" >
+        #{retreatDate,jdbcType=DATE},
       </if>
-      <if test="applydate != null" >
-        #{applydate,jdbcType=DATE},
+      <if test="applyDate != null" >
+        #{applyDate,jdbcType=DATE},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -83,20 +83,20 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat" >
     update retreat
     <set >
-      <if test="cusid != null" >
-        cusId = #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
+      <if test="retreatType != null" >
+        retreat_type = #{retreatType,jdbcType=VARCHAR},
       </if>
       <if test="reason != null" >
         reason = #{reason,jdbcType=VARCHAR},
       </if>
-      <if test="retdate != null" >
-        retDate = #{retdate,jdbcType=DATE},
+      <if test="retreatDate != null" >
+        retreat_date = #{retreatDate,jdbcType=DATE},
       </if>
-      <if test="applydate != null" >
-        applyDate = #{applydate,jdbcType=DATE},
+      <if test="applyDate != null" >
+        apply_date = #{applyDate,jdbcType=DATE},
       </if>
       <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
@@ -106,11 +106,11 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat" >
     update retreat
-    set cusId = #{cusid,jdbcType=BIGINT},
-      type = #{type,jdbcType=VARCHAR},
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      retreat_type = #{retreatType,jdbcType=VARCHAR},
       reason = #{reason,jdbcType=VARCHAR},
-      retDate = #{retdate,jdbcType=DATE},
-      applyDate = #{applydate,jdbcType=DATE},
+      retreat_date = #{retreatDate,jdbcType=DATE},
+      apply_date = #{applyDate,jdbcType=DATE},
       remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>

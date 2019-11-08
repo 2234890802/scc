@@ -3,14 +3,14 @@
 <mapper namespace="cn.scc.mapper.CheckinMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Checkin" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="cusId" property="cusid" jdbcType="BIGINT" />
-    <result column="bedStart" property="bedstart" jdbcType="DATE" />
-    <result column="bedEnd" property="bedend" jdbcType="DATE" />
-    <result column="content" property="content" jdbcType="VARCHAR" />
-    <result column="bedId" property="bedid" jdbcType="BIGINT" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="bed_id" property="bedId" jdbcType="BIGINT" />
+    <result column="bed_start" property="bedStart" jdbcType="DATE" />
+    <result column="bed_end" property="bedEnd" jdbcType="DATE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, cusId, bedStart, bedEnd, content, bedId
+    id, customer_id, bed_id, bed_start, bed_end, remark
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -23,10 +23,10 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Checkin" >
-    insert into checkin (id, cusId, bedStart, 
-      bedEnd, content, bedId)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{bedstart,jdbcType=DATE}, 
-      #{bedend,jdbcType=DATE}, #{content,jdbcType=VARCHAR}, #{bedid,jdbcType=BIGINT})
+    insert into checkin (id, customer_id, bed_id, 
+      bed_start, bed_end, remark)
+    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{bedId,jdbcType=BIGINT}, 
+      #{bedStart,jdbcType=DATE}, #{bedEnd,jdbcType=DATE}, #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Checkin" >
     insert into checkin
@@ -34,71 +34,71 @@
       <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null" >
-        cusId,
+      <if test="customerId != null" >
+        customer_id,
       </if>
-      <if test="bedstart != null" >
-        bedStart,
+      <if test="bedId != null" >
+        bed_id,
       </if>
-      <if test="bedend != null" >
-        bedEnd,
+      <if test="bedStart != null" >
+        bed_start,
       </if>
-      <if test="content != null" >
-        content,
+      <if test="bedEnd != null" >
+        bed_end,
       </if>
-      <if test="bedid != null" >
-        bedId,
+      <if test="remark != null" >
+        remark,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null" >
-        #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="bedstart != null" >
-        #{bedstart,jdbcType=DATE},
+      <if test="bedId != null" >
+        #{bedId,jdbcType=BIGINT},
       </if>
-      <if test="bedend != null" >
-        #{bedend,jdbcType=DATE},
+      <if test="bedStart != null" >
+        #{bedStart,jdbcType=DATE},
       </if>
-      <if test="content != null" >
-        #{content,jdbcType=VARCHAR},
+      <if test="bedEnd != null" >
+        #{bedEnd,jdbcType=DATE},
       </if>
-      <if test="bedid != null" >
-        #{bedid,jdbcType=BIGINT},
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Checkin" >
     update checkin
     <set >
-      <if test="cusid != null" >
-        cusId = #{cusid,jdbcType=BIGINT},
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
       </if>
-      <if test="bedstart != null" >
-        bedStart = #{bedstart,jdbcType=DATE},
+      <if test="bedId != null" >
+        bed_id = #{bedId,jdbcType=BIGINT},
       </if>
-      <if test="bedend != null" >
-        bedEnd = #{bedend,jdbcType=DATE},
+      <if test="bedStart != null" >
+        bed_start = #{bedStart,jdbcType=DATE},
       </if>
-      <if test="content != null" >
-        content = #{content,jdbcType=VARCHAR},
+      <if test="bedEnd != null" >
+        bed_end = #{bedEnd,jdbcType=DATE},
       </if>
-      <if test="bedid != null" >
-        bedId = #{bedid,jdbcType=BIGINT},
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Checkin" >
     update checkin
-    set cusId = #{cusid,jdbcType=BIGINT},
-      bedStart = #{bedstart,jdbcType=DATE},
-      bedEnd = #{bedend,jdbcType=DATE},
-      content = #{content,jdbcType=VARCHAR},
-      bedId = #{bedid,jdbcType=BIGINT}
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      bed_id = #{bedId,jdbcType=BIGINT},
+      bed_start = #{bedStart,jdbcType=DATE},
+      bed_end = #{bedEnd,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

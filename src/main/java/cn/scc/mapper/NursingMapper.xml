@@ -2,48 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.NursingMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Nursing" >
-    <id column="nurNo" property="nurno" jdbcType="BIGINT" />
-    <result column="nurName" property="nurname" jdbcType="VARCHAR" />
+    <id column="nursing_no" property="nursingNo" jdbcType="BIGINT" />
+    <result column="nursing_name" property="nursingName" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="DECIMAL" />
-    <result column="describe" property="describe" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="service" property="service" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    nurNo, nurName, price, describe, service, status
+    nursing_no, nursing_name, price, remark, service, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from nursing
-    where nurNo = #{nurno,jdbcType=BIGINT}
+    where nursing_no = #{nursingNo,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from nursing
-    where nurNo = #{nurno,jdbcType=BIGINT}
+    where nursing_no = #{nursingNo,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Nursing" >
-    insert into nursing (nurNo, nurName, price, 
-      describe, service, status
+    insert into nursing (nursing_no, nursing_name, price, 
+      remark, service, status
       )
-    values (#{nurno,jdbcType=BIGINT}, #{nurname,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
-      #{describe,jdbcType=VARCHAR}, #{service,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+    values (#{nursingNo,jdbcType=BIGINT}, #{nursingName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=VARCHAR}, #{service,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Nursing" >
     insert into nursing
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="nurno != null" >
-        nurNo,
+      <if test="nursingNo != null" >
+        nursing_no,
       </if>
-      <if test="nurname != null" >
-        nurName,
+      <if test="nursingName != null" >
+        nursing_name,
       </if>
       <if test="price != null" >
         price,
       </if>
-      <if test="describe != null" >
-        describe,
+      <if test="remark != null" >
+        remark,
       </if>
       <if test="service != null" >
         service,
@@ -53,17 +53,17 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="nurno != null" >
-        #{nurno,jdbcType=BIGINT},
+      <if test="nursingNo != null" >
+        #{nursingNo,jdbcType=BIGINT},
       </if>
-      <if test="nurname != null" >
-        #{nurname,jdbcType=VARCHAR},
+      <if test="nursingName != null" >
+        #{nursingName,jdbcType=VARCHAR},
       </if>
       <if test="price != null" >
         #{price,jdbcType=DECIMAL},
       </if>
-      <if test="describe != null" >
-        #{describe,jdbcType=VARCHAR},
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="service != null" >
         #{service,jdbcType=VARCHAR},
@@ -76,14 +76,14 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Nursing" >
     update nursing
     <set >
-      <if test="nurname != null" >
-        nurName = #{nurname,jdbcType=VARCHAR},
+      <if test="nursingName != null" >
+        nursing_name = #{nursingName,jdbcType=VARCHAR},
       </if>
       <if test="price != null" >
         price = #{price,jdbcType=DECIMAL},
       </if>
-      <if test="describe != null" >
-        describe = #{describe,jdbcType=VARCHAR},
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="service != null" >
         service = #{service,jdbcType=VARCHAR},
@@ -92,15 +92,15 @@
         status = #{status,jdbcType=VARCHAR},
       </if>
     </set>
-    where nurNo = #{nurno,jdbcType=BIGINT}
+    where nursing_no = #{nursingNo,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Nursing" >
     update nursing
-    set nurName = #{nurname,jdbcType=VARCHAR},
+    set nursing_name = #{nursingName,jdbcType=VARCHAR},
       price = #{price,jdbcType=DECIMAL},
-      describe = #{describe,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       service = #{service,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR}
-    where nurNo = #{nurno,jdbcType=BIGINT}
+    where nursing_no = #{nursingNo,jdbcType=BIGINT}
   </update>
 </mapper>
