@@ -1,17 +1,15 @@
-package cn.scc.dao;
+package cn.scc.mapper;
 
 import cn.scc.entity.Checkin;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface CheckinMapper {
-     int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(Checkin record);
 
     int insertSelective(Checkin record);
 
-     Checkin selectByPrimaryKey(Long id);
+    Checkin selectByPrimaryKey(Long id);
 
     int updateByPrimaryKeySelective(Checkin record);
 

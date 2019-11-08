@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.scc.mapper.CheckinMapper">
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Checkin">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="cusId" jdbcType="BIGINT" property="cusid" />
+    <result column="bedStart" jdbcType="DATE" property="bedstart" />
+    <result column="bedEnd" jdbcType="DATE" property="bedend" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="bedId" jdbcType="BIGINT" property="bedid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cusId, bedStart, bedEnd, content, bedId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from checkin
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from checkin
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Checkin">
+    insert into checkin (id, cusId, bedStart, 
+      bedEnd, content, bedId)
+    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{bedstart,jdbcType=DATE}, 
+      #{bedend,jdbcType=DATE}, #{content,jdbcType=VARCHAR}, #{bedid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Checkin">
+    insert into checkin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cusid != null">
+        cusId,
+      </if>
+      <if test="bedstart != null">
+        bedStart,
+      </if>
+      <if test="bedend != null">
+        bedEnd,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="bedid != null">
+        bedId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cusid != null">
+        #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="bedstart != null">
+        #{bedstart,jdbcType=DATE},
+      </if>
+      <if test="bedend != null">
+        #{bedend,jdbcType=DATE},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="bedid != null">
+        #{bedid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Checkin">
+    update checkin
+    <set>
+      <if test="cusid != null">
+        cusId = #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="bedstart != null">
+        bedStart = #{bedstart,jdbcType=DATE},
+      </if>
+      <if test="bedend != null">
+        bedEnd = #{bedend,jdbcType=DATE},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="bedid != null">
+        bedId = #{bedid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Checkin">
+    update checkin
+    set cusId = #{cusid,jdbcType=BIGINT},
+      bedStart = #{bedstart,jdbcType=DATE},
+      bedEnd = #{bedend,jdbcType=DATE},
+      content = #{content,jdbcType=VARCHAR},
+      bedId = #{bedid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Checkin">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="cusId" jdbcType="BIGINT" property="cusid" />
+    <result column="bedStart" jdbcType="DATE" property="bedstart" />
+    <result column="bedEnd" jdbcType="DATE" property="bedend" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="bedId" jdbcType="BIGINT" property="bedid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cusId, bedStart, bedEnd, content, bedId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from checkin
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from checkin
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Checkin">
+    insert into checkin (id, cusId, bedStart, 
+      bedEnd, content, bedId)
+    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{bedstart,jdbcType=DATE}, 
+      #{bedend,jdbcType=DATE}, #{content,jdbcType=VARCHAR}, #{bedid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Checkin">
+    insert into checkin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cusid != null">
+        cusId,
+      </if>
+      <if test="bedstart != null">
+        bedStart,
+      </if>
+      <if test="bedend != null">
+        bedEnd,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="bedid != null">
+        bedId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cusid != null">
+        #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="bedstart != null">
+        #{bedstart,jdbcType=DATE},
+      </if>
+      <if test="bedend != null">
+        #{bedend,jdbcType=DATE},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="bedid != null">
+        #{bedid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Checkin">
+    update checkin
+    <set>
+      <if test="cusid != null">
+        cusId = #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="bedstart != null">
+        bedStart = #{bedstart,jdbcType=DATE},
+      </if>
+      <if test="bedend != null">
+        bedEnd = #{bedend,jdbcType=DATE},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="bedid != null">
+        bedId = #{bedid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Checkin">
+    update checkin
+    set cusId = #{cusid,jdbcType=BIGINT},
+      bedStart = #{bedstart,jdbcType=DATE},
+      bedEnd = #{bedend,jdbcType=DATE},
+      content = #{content,jdbcType=VARCHAR},
+      bedId = #{bedid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

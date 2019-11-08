@@ -1,8 +1,6 @@
-package cn.scc.dao;
+package cn.scc.mapper;
 
 import cn.scc.entity.Customer;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface CustomerMapper {
     int deleteByPrimaryKey(Long cusid);
@@ -11,7 +9,7 @@ public interface CustomerMapper {
 
     int insertSelective(Customer record);
 
-     Customer selectByPrimaryKey(Long cusid);
+    Customer selectByPrimaryKey(Long cusid);
 
     int updateByPrimaryKeySelective(Customer record);
 
