@@ -27,7 +27,7 @@
 
   <!--mybatis  数据源-->
   <!-- 引入配置文件 -->
-  <context:property-placeholder location="classpath:generator.properties" />
+  <context:property-placeholder location="classpath:db.properties" />
 
   <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
         init-method="init" destroy-method="close">

@@ -8,7 +8,7 @@
     <!--<classPathEntry location="E://repository-p2p//mysql//mysql-connector-java//5.1.43//mysql-connector-java-5.1.43.jar"/>-->
 
     <!--导入属性配置-->
-    <properties resource="generator.properties"/>
+    <properties resource="db.properties"/>
 
     <!--指定特定数据库的jdbc驱动jar包的位置-->
     <classPathEntry location="${jdbc.driverLocation}"/>
