@@ -91,7 +91,7 @@ CREATE TABLE `egress` (
   `relation` varchar(30) DEFAULT NULL COMMENT '与老人关系',
   `phone` varchar(30) DEFAULT NULL COMMENT '陪同人电话',
   `remark` varchar(200) DEFAULT NULL COMMENT '备注信息',
-  `realReturn` date DEFAULT NULL COMMENT '实际回院时间（new date）',
+  `realBack` date DEFAULT NULL COMMENT '实际回院时间（new date）',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -154,11 +154,11 @@ CREATE TABLE `meals` (
 
 /*Data for the table `meals` */
 
-/*Table structure for table `nurrecord` */
+/*Table structure for table `nursecord` */
 
-DROP TABLE IF EXISTS `nurrecord`;
+DROP TABLE IF EXISTS `nursecord`;
 
-CREATE TABLE `nurrecord` (
+CREATE TABLE `nursecord` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '护理记录id',
   `cusId` bigint(20) DEFAULT NULL COMMENT '客户ID',
   `nurNo` bigint(20) DEFAULT NULL COMMENT '护理项目ID',
@@ -169,7 +169,7 @@ CREATE TABLE `nurrecord` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `nurrecord` */
+/*Data for the table `nursecord` */
 
 /*Table structure for table `nursing` */
 

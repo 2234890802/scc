@@ -1,7 +1,7 @@
 package cn.scc.entity;
 
 public class Bed {
-    private Long bedid;
+    private Long bedId;
 
     private String room;
 
@@ -9,12 +9,12 @@ public class Bed {
 
     private String status;
 
-    public Long getBedid() {
-        return bedid;
+    public Long getBedId() {
+        return bedId;
     }
 
-    public void setBedid(Long bedid) {
-        this.bedid = bedid;
+    public void setBedId(Long bedId) {
+        this.bedId = bedId;
     }
 
     public String getRoom() {

@@ -1,29 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.scc.mapper.RetreatMapper">
-  <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="cusId" jdbcType="BIGINT" property="cusid" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="reason" jdbcType="VARCHAR" property="reason" />
-    <result column="retDate" jdbcType="DATE" property="retdate" />
-    <result column="applyDate" jdbcType="DATE" property="applydate" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.RetreatMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cusId" property="cusid" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="retDate" property="retdate" jdbcType="DATE" />
+    <result column="applyDate" property="applydate" jdbcType="DATE" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, cusId, type, reason, retDate, applyDate, remark
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from retreat
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from retreat
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.scc.entity.Retreat">
+  <insert id="insert" parameterType="cn.scc.entity.Retreat" >
     insert into retreat (id, cusId, type, 
       reason, retDate, applyDate, 
       remark)
@@ -31,193 +31,80 @@
       #{reason,jdbcType=VARCHAR}, #{retdate,jdbcType=DATE}, #{applydate,jdbcType=DATE}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.scc.entity.Retreat">
+  <insert id="insertSelective" parameterType="cn.scc.entity.Retreat" >
     insert into retreat
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null">
+      <if test="cusid != null" >
         cusId,
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type,
       </if>
-      <if test="reason != null">
+      <if test="reason != null" >
         reason,
       </if>
-      <if test="retdate != null">
+      <if test="retdate != null" >
         retDate,
       </if>
-      <if test="applydate != null">
+      <if test="applydate != null" >
         applyDate,
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         remark,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null">
+      <if test="cusid != null" >
         #{cusid,jdbcType=BIGINT},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         #{type,jdbcType=VARCHAR},
       </if>
-      <if test="reason != null">
+      <if test="reason != null" >
         #{reason,jdbcType=VARCHAR},
       </if>
-      <if test="retdate != null">
+      <if test="retdate != null" >
         #{retdate,jdbcType=DATE},
       </if>
-      <if test="applydate != null">
+      <if test="applydate != null" >
         #{applydate,jdbcType=DATE},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat" >
     update retreat
-    <set>
-      <if test="cusid != null">
+    <set >
+      <if test="cusid != null" >
         cusId = #{cusid,jdbcType=BIGINT},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="reason != null">
+      <if test="reason != null" >
         reason = #{reason,jdbcType=VARCHAR},
       </if>
-      <if test="retdate != null">
+      <if test="retdate != null" >
         retDate = #{retdate,jdbcType=DATE},
       </if>
-      <if test="applydate != null">
+      <if test="applydate != null" >
         applyDate = #{applydate,jdbcType=DATE},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat">
-    update retreat
-    set cusId = #{cusid,jdbcType=BIGINT},
-      type = #{type,jdbcType=VARCHAR},
-      reason = #{reason,jdbcType=VARCHAR},
-      retDate = #{retdate,jdbcType=DATE},
-      applyDate = #{applydate,jdbcType=DATE},
-      remark = #{remark,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="cusId" jdbcType="BIGINT" property="cusid" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="reason" jdbcType="VARCHAR" property="reason" />
-    <result column="retDate" jdbcType="DATE" property="retdate" />
-    <result column="applyDate" jdbcType="DATE" property="applydate" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, cusId, type, reason, retDate, applyDate, remark
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from retreat
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from retreat
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="cn.scc.entity.Retreat">
-    insert into retreat (id, cusId, type, 
-      reason, retDate, applyDate, 
-      remark)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
-      #{reason,jdbcType=VARCHAR}, #{retdate,jdbcType=DATE}, #{applydate,jdbcType=DATE}, 
-      #{remark,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.scc.entity.Retreat">
-    insert into retreat
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="cusid != null">
-        cusId,
-      </if>
-      <if test="type != null">
-        type,
-      </if>
-      <if test="reason != null">
-        reason,
-      </if>
-      <if test="retdate != null">
-        retDate,
-      </if>
-      <if test="applydate != null">
-        applyDate,
-      </if>
-      <if test="remark != null">
-        remark,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="cusid != null">
-        #{cusid,jdbcType=BIGINT},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="reason != null">
-        #{reason,jdbcType=VARCHAR},
-      </if>
-      <if test="retdate != null">
-        #{retdate,jdbcType=DATE},
-      </if>
-      <if test="applydate != null">
-        #{applydate,jdbcType=DATE},
-      </if>
-      <if test="remark != null">
-        #{remark,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat">
-    update retreat
-    <set>
-      <if test="cusid != null">
-        cusId = #{cusid,jdbcType=BIGINT},
-      </if>
-      <if test="type != null">
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="reason != null">
-        reason = #{reason,jdbcType=VARCHAR},
-      </if>
-      <if test="retdate != null">
-        retDate = #{retdate,jdbcType=DATE},
-      </if>
-      <if test="applydate != null">
-        applyDate = #{applydate,jdbcType=DATE},
-      </if>
-      <if test="remark != null">
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat">
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat" >
     update retreat
     set cusId = #{cusid,jdbcType=BIGINT},
       type = #{type,jdbcType=VARCHAR},

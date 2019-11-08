@@ -5,15 +5,15 @@ import java.util.Date;
 public class Retreat {
     private Long id;
 
-    private Long cusid;
+    private Long cusId;
 
     private String type;
 
     private String reason;
 
-    private Date retdate;
+    private Date retDate;
 
-    private Date applydate;
+    private Date applyDate;
 
     private String remark;
 
@@ -25,12 +25,12 @@ public class Retreat {
         this.id = id;
     }
 
-    public Long getCusid() {
-        return cusid;
+    public Long getCusId() {
+        return cusId;
     }
 
-    public void setCusid(Long cusid) {
-        this.cusid = cusid;
+    public void setCusId(Long cusId) {
+        this.cusId = cusId;
     }
 
     public String getType() {
@@ -49,20 +49,20 @@ public class Retreat {
         this.reason = reason == null ? null : reason.trim();
     }
 
-    public Date getRetdate() {
-        return retdate;
+    public Date getRetDate() {
+        return retDate;
     }
 
-    public void setRetdate(Date retdate) {
-        this.retdate = retdate;
+    public void setRetDate(Date retDate) {
+        this.retDate = retDate;
     }
 
-    public Date getApplydate() {
-        return applydate;
+    public Date getApplyDate() {
+        return applyDate;
     }
 
-    public void setApplydate(Date applydate) {
-        this.applydate = applydate;
+    public void setApplyDate(Date applyDate) {
+        this.applyDate = applyDate;
     }
 
     public String getRemark() {

@@ -1,17 +1,17 @@
 package cn.scc.mapper;
 
-import cn.scc.entity.Nurrecord;
+import cn.scc.entity.Nursecord;
 
 public interface NurrecordMapper {
     int deleteByPrimaryKey(Long id);
 
-    int insert(Nurrecord record);
+    int insert(Nursecord record);
 
-    int insertSelective(Nurrecord record);
+    int insertSelective(Nursecord record);
 
-    Nurrecord selectByPrimaryKey(Long id);
+    Nursecord selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(Nurrecord record);
+    int updateByPrimaryKeySelective(Nursecord record);
 
-    int updateByPrimaryKey(Nurrecord record);
+    int updateByPrimaryKey(Nursecord record);
 }

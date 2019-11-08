@@ -2,7 +2,7 @@ package cn.scc.entity;
 
 import java.util.Date;
 
-public class Nurrecord {
+public class Nursecord {
     private Long id;
 
     private Long cusid;
@@ -15,7 +15,7 @@ public class Nurrecord {
 
     private Long number;
 
-    private Long empid;
+    private Long empId;
 
     public Long getId() {
         return id;
@@ -65,11 +65,11 @@ public class Nurrecord {
         this.number = number;
     }
 
-    public Long getEmpid() {
-        return empid;
+    public Long getEmpId() {
+        return empId;
     }
 
-    public void setEmpid(Long empid) {
-        this.empid = empid;
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 }

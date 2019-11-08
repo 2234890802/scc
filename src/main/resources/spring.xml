@@ -16,26 +16,26 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-    <bean name="security" class="cn.ngmc.security.SecurityHandler"></bean>
+    <aop:aspectj-autoproxy/>
+<!--    <bean name="security" class="cn.ngmc.security.SecurityHandler"></bean>-->
 
   <!-- 自动扫描(自动注入) -->
-  <context:component-scan base-package="cn.ngmc.service" />
-  <context:component-scan base-package="cn.ngmc.dao" />
+  <context:component-scan base-package="cn.scc.service" />
+  <context:component-scan base-package="cn.scc.mapper" />
 
 
 
   <!--mybatis  数据源-->
   <!-- 引入配置文件 -->
-  <context:property-placeholder location="classpath:db.properties" />
+  <context:property-placeholder location="classpath:generator.properties" />
 
   <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
         init-method="init" destroy-method="close">
     <!-- 配置数据源基本连接 -->
-    <property name="url" value="${url}" />
-    <property name="driverClassName" value="${driver}" />
-    <property name="username" value="${username}"/>
-    <property name="password" value="${pwd}"/>
+    <property name="url" value="${jdbc.connectionURL}" />
+    <property name="driverClassName" value="${jdbc.driverClass}" />
+    <property name="username" value="${jdbc.userId}"/>
+    <property name="password" value="${jdbc.password}"/>
     <!-- 初始化连接大小 -->
     <property name="initialSize" value="0" />
     <!-- 连接池最大使用连接数量 -->
@@ -67,14 +67,14 @@
   <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
     <property name="dataSource" ref="dataSource" />
-    <!-- 自动扫描mapping.xml文件 -->
-    <property name="mapperLocations" value="classpath*:mapper/*.xml"></property>
-    <property name="configLocation" value="classpath:mybatis.xml"></property>
+    <!-- 自动扫描mapper.xml文件 -->
+<!--    <property name="mapperLocations" value="classpath*:*.xml"/>-->
+    <property name="configLocation" value="classpath:mybatis.xml"/>
   </bean>
 
   <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
   <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-    <property name="basePackage" value="cn.ngmc.dao" />
+    <property name="basePackage" value="cn.scc.mapper" />
     <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
   </bean>
 

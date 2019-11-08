@@ -1,142 +1,142 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.scc.mapper.EgressMapper">
-  <resultMap id="BaseResultMap" type="cn.scc.entity.Egress">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="cusId" jdbcType="BIGINT" property="cusid" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="egrDate" jdbcType="DATE" property="egrdate" />
-    <result column="back" jdbcType="DATE" property="back" />
-    <result column="companion" jdbcType="VARCHAR" property="companion" />
-    <result column="relation" jdbcType="VARCHAR" property="relation" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="remark" jdbcType="VARCHAR" property="remark" />
-    <result column="realReturn" jdbcType="DATE" property="realreturn" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.EgressMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Egress" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cusId" property="cusid" jdbcType="BIGINT" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="egrDate" property="egrdate" jdbcType="DATE" />
+    <result column="back" property="back" jdbcType="DATE" />
+    <result column="companion" property="companion" jdbcType="VARCHAR" />
+    <result column="relation" property="relation" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="realBack" property="realback" jdbcType="DATE" />
   </resultMap>
-  <sql id="Base_Column_List">
-    id, cusId, type, egrDate, back, companion, relation, phone, remark, realReturn
+  <sql id="Base_Column_List" >
+    id, cusId, type, egrDate, back, companion, relation, phone, remark, realBack
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from egress
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from egress
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.scc.entity.Egress">
+  <insert id="insert" parameterType="cn.scc.entity.Egress" >
     insert into egress (id, cusId, type, 
       egrDate, back, companion, 
       relation, phone, remark, 
-      realReturn)
+      realBack)
     values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
       #{egrdate,jdbcType=DATE}, #{back,jdbcType=DATE}, #{companion,jdbcType=VARCHAR}, 
       #{relation,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{realreturn,jdbcType=DATE})
+      #{realback,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="cn.scc.entity.Egress">
+  <insert id="insertSelective" parameterType="cn.scc.entity.Egress" >
     insert into egress
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="cusid != null">
+      <if test="cusid != null" >
         cusId,
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type,
       </if>
-      <if test="egrdate != null">
+      <if test="egrdate != null" >
         egrDate,
       </if>
-      <if test="back != null">
+      <if test="back != null" >
         back,
       </if>
-      <if test="companion != null">
+      <if test="companion != null" >
         companion,
       </if>
-      <if test="relation != null">
+      <if test="relation != null" >
         relation,
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone,
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         remark,
       </if>
-      <if test="realreturn != null">
-        realReturn,
+      <if test="realback != null" >
+        realBack,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="cusid != null">
+      <if test="cusid != null" >
         #{cusid,jdbcType=BIGINT},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         #{type,jdbcType=VARCHAR},
       </if>
-      <if test="egrdate != null">
+      <if test="egrdate != null" >
         #{egrdate,jdbcType=DATE},
       </if>
-      <if test="back != null">
+      <if test="back != null" >
         #{back,jdbcType=DATE},
       </if>
-      <if test="companion != null">
+      <if test="companion != null" >
         #{companion,jdbcType=VARCHAR},
       </if>
-      <if test="relation != null">
+      <if test="relation != null" >
         #{relation,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="realreturn != null">
-        #{realreturn,jdbcType=DATE},
+      <if test="realback != null" >
+        #{realback,jdbcType=DATE},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Egress">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Egress" >
     update egress
-    <set>
-      <if test="cusid != null">
+    <set >
+      <if test="cusid != null" >
         cusId = #{cusid,jdbcType=BIGINT},
       </if>
-      <if test="type != null">
+      <if test="type != null" >
         type = #{type,jdbcType=VARCHAR},
       </if>
-      <if test="egrdate != null">
+      <if test="egrdate != null" >
         egrDate = #{egrdate,jdbcType=DATE},
       </if>
-      <if test="back != null">
+      <if test="back != null" >
         back = #{back,jdbcType=DATE},
       </if>
-      <if test="companion != null">
+      <if test="companion != null" >
         companion = #{companion,jdbcType=VARCHAR},
       </if>
-      <if test="relation != null">
+      <if test="relation != null" >
         relation = #{relation,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="realreturn != null">
-        realReturn = #{realreturn,jdbcType=DATE},
+      <if test="realback != null" >
+        realBack = #{realback,jdbcType=DATE},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Egress">
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Egress" >
     update egress
     set cusId = #{cusid,jdbcType=BIGINT},
       type = #{type,jdbcType=VARCHAR},
@@ -146,155 +146,7 @@
       relation = #{relation,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       remark = #{remark,jdbcType=VARCHAR},
-      realReturn = #{realreturn,jdbcType=DATE}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.scc.entity.Egress">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="cusId" jdbcType="BIGINT" property="cusid" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="egrDate" jdbcType="DATE" property="egrdate" />
-    <result column="return" jdbcType="DATE" property="return" />
-    <result column="companion" jdbcType="VARCHAR" property="companion" />
-    <result column="relation" jdbcType="VARCHAR" property="relation" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="content" jdbcType="VARCHAR" property="content" />
-    <result column="realReturn" jdbcType="DATE" property="realreturn" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, cusId, type, egrDate, return, companion, relation, phone, content, realReturn
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from egress
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from egress
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <insert id="insert" parameterType="cn.scc.entity.Egress">
-    insert into egress (id, cusId, type, 
-      egrDate, return, companion, 
-      relation, phone, content, 
-      realReturn)
-    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
-      #{egrdate,jdbcType=DATE}, #{return,jdbcType=DATE}, #{companion,jdbcType=VARCHAR}, 
-      #{relation,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{realreturn,jdbcType=DATE})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.scc.entity.Egress">
-    insert into egress
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="cusid != null">
-        cusId,
-      </if>
-      <if test="type != null">
-        type,
-      </if>
-      <if test="egrdate != null">
-        egrDate,
-      </if>
-      <if test="return != null">
-        return,
-      </if>
-      <if test="companion != null">
-        companion,
-      </if>
-      <if test="relation != null">
-        relation,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="content != null">
-        content,
-      </if>
-      <if test="realreturn != null">
-        realReturn,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="cusid != null">
-        #{cusid,jdbcType=BIGINT},
-      </if>
-      <if test="type != null">
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="egrdate != null">
-        #{egrdate,jdbcType=DATE},
-      </if>
-      <if test="return != null">
-        #{return,jdbcType=DATE},
-      </if>
-      <if test="companion != null">
-        #{companion,jdbcType=VARCHAR},
-      </if>
-      <if test="relation != null">
-        #{relation,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="realreturn != null">
-        #{realreturn,jdbcType=DATE},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Egress">
-    update egress
-    <set>
-      <if test="cusid != null">
-        cusId = #{cusid,jdbcType=BIGINT},
-      </if>
-      <if test="type != null">
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="egrdate != null">
-        egrDate = #{egrdate,jdbcType=DATE},
-      </if>
-      <if test="return != null">
-        return = #{return,jdbcType=DATE},
-      </if>
-      <if test="companion != null">
-        companion = #{companion,jdbcType=VARCHAR},
-      </if>
-      <if test="relation != null">
-        relation = #{relation,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        content = #{content,jdbcType=VARCHAR},
-      </if>
-      <if test="realreturn != null">
-        realReturn = #{realreturn,jdbcType=DATE},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Egress">
-    update egress
-    set cusId = #{cusid,jdbcType=BIGINT},
-      type = #{type,jdbcType=VARCHAR},
-      egrDate = #{egrdate,jdbcType=DATE},
-      return = #{return,jdbcType=DATE},
-      companion = #{companion,jdbcType=VARCHAR},
-      relation = #{relation,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      content = #{content,jdbcType=VARCHAR},
-      realReturn = #{realreturn,jdbcType=DATE}
+      realBack = #{realback,jdbcType=DATE}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
