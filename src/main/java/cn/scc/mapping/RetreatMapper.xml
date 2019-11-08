@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.scc.dao.RetreatMapper">
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="cusId" jdbcType="BIGINT" property="cusid" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="reason" jdbcType="VARCHAR" property="reason" />
+    <result column="retDate" jdbcType="DATE" property="retdate" />
+    <result column="applyDate" jdbcType="DATE" property="applydate" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, cusId, type, reason, retDate, applyDate, remark
+  </sql>
+  <select id="selectByExample" parameterType="cn.scc.entity.RetreatExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from retreat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from retreat
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from retreat
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.scc.entity.RetreatExample">
+    delete from retreat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Retreat">
+    insert into retreat (id, cusId, type, 
+      reason, retDate, applyDate, 
+      remark)
+    values (#{id,jdbcType=BIGINT}, #{cusid,jdbcType=BIGINT}, #{type,jdbcType=VARCHAR}, 
+      #{reason,jdbcType=VARCHAR}, #{retdate,jdbcType=DATE}, #{applydate,jdbcType=DATE}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Retreat">
+    insert into retreat
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cusid != null">
+        cusId,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="reason != null">
+        reason,
+      </if>
+      <if test="retdate != null">
+        retDate,
+      </if>
+      <if test="applydate != null">
+        applyDate,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="cusid != null">
+        #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null">
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="retdate != null">
+        #{retdate,jdbcType=DATE},
+      </if>
+      <if test="applydate != null">
+        #{applydate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.scc.entity.RetreatExample" resultType="java.lang.Long">
+    select count(*) from retreat
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update retreat
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.cusid != null">
+        cusId = #{record.cusid,jdbcType=BIGINT},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reason != null">
+        reason = #{record.reason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.retdate != null">
+        retDate = #{record.retdate,jdbcType=DATE},
+      </if>
+      <if test="record.applydate != null">
+        applyDate = #{record.applydate,jdbcType=DATE},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update retreat
+    set id = #{record.id,jdbcType=BIGINT},
+      cusId = #{record.cusid,jdbcType=BIGINT},
+      type = #{record.type,jdbcType=VARCHAR},
+      reason = #{record.reason,jdbcType=VARCHAR},
+      retDate = #{record.retdate,jdbcType=DATE},
+      applyDate = #{record.applydate,jdbcType=DATE},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat">
+    update retreat
+    <set>
+      <if test="cusid != null">
+        cusId = #{cusid,jdbcType=BIGINT},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="reason != null">
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="retdate != null">
+        retDate = #{retdate,jdbcType=DATE},
+      </if>
+      <if test="applydate != null">
+        applyDate = #{applydate,jdbcType=DATE},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat">
+    update retreat
+    set cusId = #{cusid,jdbcType=BIGINT},
+      type = #{type,jdbcType=VARCHAR},
+      reason = #{reason,jdbcType=VARCHAR},
+      retDate = #{retdate,jdbcType=DATE},
+      applyDate = #{applydate,jdbcType=DATE},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
