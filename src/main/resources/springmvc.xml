@@ -20,8 +20,8 @@
 
 <!--    <bean name="/index.do" class="cn.ngmc.controller.HelloController"></bean>-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/jsp/"/>
-        <property name="suffix" value=".jsp"/>
+        <property name="prefix" value="/WEB-INF/Page/"/>
+        <property name="suffix" value=".html"/>
     </bean>
 
 </beans>

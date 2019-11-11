@@ -185,4 +185,12 @@
       status = #{status,jdbcType=VARCHAR}
     where emp_id = #{empId,jdbcType=BIGINT}
   </update>
+
+  <select id="login" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"></include>
+    from employee
+    where emp_id = #{empId}
+    and emp_pwd = #{empPwd}
+  </select>
 </mapper>
