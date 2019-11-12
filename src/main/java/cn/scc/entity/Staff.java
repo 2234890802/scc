@@ -19,6 +19,8 @@ public class Staff {
 
     private String staffName;
 
+    private String password;
+
     private String staffSex;
 
     private String staffAge;
@@ -99,6 +101,14 @@ public class Staff {
 
     public void setStaffName(String staffName) {
         this.staffName = staffName == null ? null : staffName.trim();
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
     }
 
     public String getStaffSex() {

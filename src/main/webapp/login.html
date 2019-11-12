@@ -19,19 +19,26 @@
 	<h2>东软颐养中心</h2>
 	<div class="login-top">
 		<h1>登录</h1>
-		<form action="login.do">
-			<input type="text" name="empId" value="EmpId" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'EmpId';}">
-			<input type="password" name="empPwd" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}">
+		<form action="login.do" method="post">
+			<input type="text" id="staffName" name="staffName" value="用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '用户名';}">
+			<input type="password" id="password" name="password" value="密码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '密码';}">
 	    
 		    <div class="forgot">
-		    	<input type="submit" value="登录" >
+		    	<input type="submit"  value="登录" >
 		    </div>
 	    </form>
 	</div>
 
 </div>	
 
-
-
 </body>
+<!--<script type="text/javascript" href="About/js/jquery-3.4.1.js"></script>-->
+<!--<script>-->
+<!--	$.ajax({-->
+<!--		url:'/login.do',-->
+<!--		type:'post',-->
+<!--		data:'',-->
+
+<!--	})-->
+<!--</script>-->
 </html>

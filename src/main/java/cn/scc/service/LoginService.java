@@ -12,5 +12,6 @@ import cn.scc.entity.Staff;
  */
 public interface LoginService {
 
-//    Staff queryStaffBy
+    Staff Login(Staff staff);
+
 }

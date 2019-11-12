@@ -4,27 +4,27 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
 	<title>上实颐养中心</title>
-	<link href="../About/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/myCss.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/main.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/base.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/myCss.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/main.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/base.css" type="text/css" rel="stylesheet">
 	<!--按钮样式表-->
-	<link href="../About/css/btn.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/css.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/index.css" type="text/css" rel="stylesheet">
-	<link href="../About/css/search.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/btn.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/css.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/index.css" type="text/css" rel="stylesheet">
+	<link href="../../About/css/search.css" type="text/css" rel="stylesheet">
 
-	<script src="../About/js/jquery.min.js"></script>
-	<script src="../About/js/easing.js"></script>
-	<script src="../About/js/bootstrap.min.js"></script>
-	<script src="../About/js/jQuery.rTabs.js"></script>	
+	<script src="../../About/js/jquery.min.js"></script>
+	<script src="../../About/js/easing.js"></script>
+	<script src="../../About/js/bootstrap.min.js"></script>
+	<script src="../../About/js/jQuery.rTabs.js"></script>
 	<!-- 日历 -->
-	<script src="../About/codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" href="../About/codebase/dhtmlxscheduler.css" type="text/css" charset="utf-8">
-	<script src="../About/codebase/locale/locale_cn.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../About/codebase/dhtmlxscheduler.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../../About/codebase/dhtmlxscheduler.css" type="text/css" charset="utf-8">
+	<script src="../../About/codebase/locale/locale_cn.js" type="text/javascript" charset="utf-8"></script>
 	<!-- 支持模糊搜索的 下拉框 -->
-	<link rel="stylesheet" type="text/css" href="../About/css/bootstrap-select.min.css"/> 
-	<script type="text/javascript" src="../About/js/bootstrap-select.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../About/css/bootstrap-select.min.css"/>
+	<script type="text/javascript" src="../../About/js/bootstrap-select.min.js"></script>
 	<style>
 		.pad {
 			padding:16px;
@@ -120,7 +120,7 @@
 						<div class="col-md-12 text-center pd0 fmt2">
 							<div class="dropdown">
 								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-									欢迎您Teemo
+									欢迎您<span id="staffName"></span>
 									<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -142,7 +142,7 @@
 			<div class="BodyLeft">
 				<div class="BodyLeftPerson">
 					<div class="col-md-12 text-center pd0 mt15">
-						<img src="../About/images/SIICS.png" style="width: 70px;height: 70px;" class="personHeadCss">
+						<img src="../../About/images/SIICS.png" style="width: 70px;height: 70px;" class="personHeadCss">
 					</div>
 					<div class="col-md-12 text-center pd0 mt10">
 						<span class="BodyLeftPersonFont">Welcome Teemo</span>
@@ -159,30 +159,30 @@
 										<li><a href="javascript:void(0)" onclick="nextPage('cwgl')">床位管理</a></li>
 									</ul>
 								</li>
-								<li class="level1">
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>评估管理<i></i></a>
 									<ul class="level2">
-										<!--<li><a href="javascript:void(0)" onclick="nextPage('pggl')">评估管理</a></li>-->
+										&lt;!&ndash;<li><a href="javascript:void(0)" onclick="nextPage('pggl')">评估管理</a></li>&ndash;&gt;
 										<li><a href="pgmb.html" onclick="openPage()" target="ckjkda">评估模板</a></li>
 										<li><a href="pgjl.html" onclick="openPage()" target="ckjkda">评估记录</a></li>
 									</ul>
-								</li>
-								<li class="level1">
+								</li>-->
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>健康档案<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('jkda')">健康档案</a></li>
 										<li><a href="javascript:void(0)" onclick="nextPage('jzjl')">就诊/询诊记录</a></li>
 										<li><a onclick="nextPage('jkpg')">健康评估</a></li>										
 									</ul>
-								</li>
-								<li class="level1">
+								</li>-->
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>康复管理<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('kfdj')">康复登记</a></li>
 										<li><a href="javascript:void(0)" onclick="nextPage('kfjh')">康复计划</a></li>
 										<li><a href="javascript:void(0)" onclick="nextPage('kfgz')">康复跟踪</a></li>
 									</ul>
-								</li>
+								</li>-->
 								<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>客户管理<i></i></a>
 									<ul class="level2">
@@ -197,21 +197,21 @@
 									<a href="#none"><em class="ico ico5"></em>膳食管理<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('ssrl')">膳食日历</a></li>
-										<li><a href="javascript:void(0)" onclick="nextPage('ssgl')">膳食管理</a></li>
-										<li><a href="javascript:void(0)" onclick="nextPage('sstj')">膳食统计</a></li>
+<!--										<li><a href="javascript:void(0)" onclick="nextPage('ssgl')">膳食管理</a></li>-->
+<!--										<li><a href="javascript:void(0)" onclick="nextPage('sstj')">膳食统计</a></li>-->
 									</ul>
 								</li>
 								<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>护理管理<i></i></a>
 									<ul class="level2">
-										<li><a href="hljb.html" onclick="openPage('hljb')" target="ckjkda">护理级别</a></li>
+<!--										<li><a href="hljb.html" onclick="openPage('hljb')" target="ckjkda">护理级别</a></li>-->
 										<li><a href="hlnr.html" onclick="openPage()" target="ckjkda">护理内容</a></li>
 										<!--<li><a href="hlfxpg_home.html" onclick="openPage()" target="ckjkda">护理风险评估</a></li>-->
 										<li><a href="hljl.html" onclick="openPage()" target="ckjkda">护理记录</a></li>
-										<li><a href="yygl.html" onclick="openPage()" target="ckjkda">用药管理</a></li>
+<!--										<li><a href="yygl.html" onclick="openPage()" target="ckjkda">用药管理</a></li>-->
 									</ul>
 								</li>
-								<li class="level1">
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>健康管家<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('szfwdx')">设置服务对象</a></li>
@@ -223,32 +223,32 @@
 										<li><a href="jjsjcl.html" onclick="openPage()" target="ckjkda">紧急事件处理</a></li>
 										<li><a href="javascript:void(0)" onclick="nextPage('bjsz')">报警设置</a></li>
 									</ul>
-								</li>
-								<li class="level1">
+								</li>-->
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>护士站<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('szfwdx2')">设置服务对象</a></li>
-										<!-- <li><a href="javascript:window.location.href='hsz.html'">护士站</a></li> -->
+										&lt;!&ndash; <li><a href="javascript:window.location.href='hsz.html'">护士站</a></li> &ndash;&gt;
 										<li><a href="javascript:window.open('hsz.html')">护士站</a></li>
-										<!-- <li><a href="gzjh.html" onclick="openPage()" target="ckjkda">工作计划</a></li> -->
+										&lt;!&ndash; <li><a href="gzjh.html" onclick="openPage()" target="ckjkda">工作计划</a></li> &ndash;&gt;
 										<li><a href="javascript:void(0)" onclick="nextPage('gzjh')">工作计划</a></li>
 										<li><a href="gzrz.html" onclick="openPage()" target="ckjkda">工作日志</a></li>
-										<li><a href="jjbgl.html" onclick="openPage()" target="ckjkda">交接班管理</a></li>										
+										<li><a href="jjbgl.html" onclick="openPage()" target="ckjkda">交接班管理</a></li>
 									</ul>
-								</li>
-								<li class="level1">
+								</li>-->
+								<!--<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>生活管理<i></i></a>
 									<ul class="level2">
 										<li><a href="javascript:void(0)" onclick="nextPage('dnbc')">班车路线</a></li>
 										<li><a href="javascript:void(0)" onclick="nextPage('tqqk')">天气情况</a></li>
 									</ul>
-								</li>
+								</li>-->
 								<li class="level1">
 									<a href="#none"><em class="ico ico5"></em>系统设置<i></i></a>
 									<ul class="level2">
-										<li><a href="javascript:void(0)" onclick="nextPage('jcsjwh')">基础数据维护</a></li>
+<!--										<li><a href="javascript:void(0)" onclick="nextPage('jcsjwh')">基础数据维护</a></li>-->
 										<li><a href="gzrygl.html" onclick="openPage()" target="ckjkda">工作人员管理</a></li>
-										<li><a href="rcshzlfa.html" onclick="openPage()" target="ckjkda">日常生活照料方案</a></li>
+<!--										<li><a href="rcshzlfa.html" onclick="openPage()" target="ckjkda">日常生活照料方案</a></li>-->
 									</ul>
 								</li>
 							</ul>
@@ -365,46 +365,46 @@
 										</div>
 									</td>
 									<td style="width:140px">
-										<div class="cw_img ml15"><img src="../About/images/tz.png"/></div>
+										<div class="cw_img ml15"><img src="../../About/images/tz.png"/></div>
 										<span class="cw_num"><b>总床数：</b>27</span>
 									</td>
 									<td style="width:140px">
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/kx.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/kx.png"/></div>
 											<span class="cw_num"><b>空闲：</b>03</span>
 										</div>
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/yr.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/yr.png"/></div>
 											<span class="cw_num"><b>有人：</b>12</span>
 										</div>
 									</td>
 									<td style="width:140px">
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/lc.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/lc.png"/></div>
 											<span class="cw_num"><b>离床：</b>03</span>
 										</div>
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/wc.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/wc.png"/></div>
 											<span class="cw_num"><b>外出：</b>12</span>
 										</div>
 									</td>
 									<td style="width:140px">
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/jhnlc.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/jhnlc.png"/></div>
 											<span class="cw_num"><b>计划内离床：</b>03</span>
 										</div>
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/lk.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/lk.png"/></div>
 											<span class="cw_num"><b>离开：</b>12</span>
 										</div>
 									</td>
 									<td style="width:140px">
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/lccs.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/lccs.png"/></div>
 											<span class="cw_num"><b>离床超时：</b>03</span>
 										</div>
 										<div>
-											<div class="cw_img ml10"><img src="../About/images/tz.png"/></div>
+											<div class="cw_img ml10"><img src="../../About/images/tz.png"/></div>
 											<span class="cw_num"><b>退住：</b>12</span>
 										</div>
 									</td>
@@ -426,44 +426,44 @@
 										<tr class="cwsyt_tbody">
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg none"><img src="../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2101-1
+													<div class="mt5 cw_img_lg none"><img src="../../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2101-1
 												</a>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lccs.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2101-2
-												</a>
-											</td>
-											<td>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2102-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2102-2
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lccs.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2101-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg none"><img src="../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2103-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2102-1
 												</a>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2103-2
-												</a>
-											</td>
-											<td>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2104-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lk.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2104-2
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2102-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2105-1
+													<div class="mt5 cw_img_lg none"><img src="../../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2103-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2103-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/wc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2106-1
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2104-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lk.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2104-2
+												</a>
+											</td>
+											<td>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2105-1
+												</a>
+											</td>
+											<td>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg"><img src="../../About/images/wc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2106-1
 												</a>
 											</td>
 										</tr>
@@ -485,77 +485,77 @@
 										<tr class="cwsyt_tbody">
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2107-1
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2107-1
 												</a>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/wc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2107-2
-												</a>
-											</td>
-											<td>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2108-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2108-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/wc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2107-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg none"><img src="../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2109-1
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2108-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg exist"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2108-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist4"><img src="../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2110-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist1"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2110-2
+													<div class="mt5 cw_img_lg none"><img src="../../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2109-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist2"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2111-1
+													<div class="mt5 cw_img_lg exist4"><img src="../../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2110-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg exist1"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2110-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg none"><img src="../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2112-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg exist3"><img src="../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2112-2
+													<div class="mt5 cw_img_lg exist2"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2111-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2113-1
+													<div class="mt5 cw_img_lg none"><img src="../../About/images/kx.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2112-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg exist3"><img src="../../About/images/yr.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2112-2
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2114-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2113-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lccs.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2115-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2114-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2116-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lccs.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2115-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/jhnlc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2117-1
-												</a>
-												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2117-2
+													<div class="mt5 cw_img_lg"><img src="../../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2116-1
 												</a>
 											</td>
 											<td>
 												<a href="javascript:void(0)" style="text-decoration: none;">
-													<div class="mt5 cw_img_lg"><img src="../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2118-1
+													<div class="mt5 cw_img_lg"><img src="../../About/images/jhnlc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2117-1
+												</a>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg"><img src="../../About/images/tz.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2117-2
+												</a>
+											</td>
+											<td>
+												<a href="javascript:void(0)" style="text-decoration: none;">
+													<div class="mt5 cw_img_lg"><img src="../../About/images/lc.png"/></div>&nbsp;&nbsp;&nbsp;&nbsp;2118-1
 												</a>
 											</td>
 										</tr>
@@ -2306,7 +2306,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-up">多糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2352,7 +2352,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-up">多盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2398,7 +2398,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2444,7 +2444,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-down">少糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2490,7 +2490,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2537,7 +2537,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-up">多糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2584,7 +2584,7 @@
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
 																	<a href="javascript:ssgl_tc()">
-																		<img src="../About/images/timg1.jpg" width="120px;" height="95px;">
+																		<img src="../../About/images/timg1.jpg" width="120px;" height="95px;">
 																	</a>
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
@@ -2645,7 +2645,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-up">多糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2691,7 +2691,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-up">多盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2737,7 +2737,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2783,7 +2783,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-down">少糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2829,7 +2829,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2876,7 +2876,7 @@
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
 																	<a href="javascript:ssgl_tc()">
-																		<img src="../About/images/timg1.jpg" width="120px;" height="95px;">
+																		<img src="../../About/images/timg1.jpg" width="120px;" height="95px;">
 																	</a>
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
@@ -2937,7 +2937,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-up">多糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -2983,7 +2983,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-up">多盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -3029,7 +3029,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -3075,7 +3075,7 @@
 																	<span class="label label-primary glyphicon glyphicon-arrow-down">少糖</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -3121,7 +3121,7 @@
 																	<span class="label label-danger glyphicon glyphicon-arrow-down">少盐</span>
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -3168,7 +3168,7 @@
 																</div>
 																<div class="col-md-12 text-center pd0 mt10">
 																	<a href="javascript:ssgl_tc()">
-																		<img src="../About/images/timg1.jpg" width="120px;" height="95px;">
+																		<img src="../../About/images/timg1.jpg" width="120px;" height="95px;">
 																	</a>
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
@@ -3229,7 +3229,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="mt10" style="position: absolute;right: 0;z-index: 1;">
 																	<span class="label-normal glyphicon glyphicon-pencil open_ssrl_add"></span>
@@ -3272,7 +3272,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3311,7 +3311,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3350,7 +3350,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3389,7 +3389,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3428,7 +3428,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3481,7 +3481,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3520,7 +3520,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3559,7 +3559,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3598,7 +3598,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3637,7 +3637,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3676,7 +3676,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3729,7 +3729,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3768,7 +3768,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3807,7 +3807,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3846,7 +3846,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3885,7 +3885,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3924,7 +3924,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -3980,7 +3980,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4019,7 +4019,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4058,7 +4058,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4097,7 +4097,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4136,7 +4136,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4175,7 +4175,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4228,7 +4228,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4267,7 +4267,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4306,7 +4306,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4345,7 +4345,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4384,7 +4384,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4423,7 +4423,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4476,7 +4476,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4515,7 +4515,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4554,7 +4554,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4593,7 +4593,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4632,7 +4632,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4671,7 +4671,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4727,7 +4727,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4766,7 +4766,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4805,7 +4805,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4844,7 +4844,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4883,7 +4883,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4922,7 +4922,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -4975,7 +4975,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5014,7 +5014,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5053,7 +5053,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5092,7 +5092,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5131,7 +5131,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5170,7 +5170,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5223,7 +5223,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5262,7 +5262,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5301,7 +5301,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5340,7 +5340,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5379,7 +5379,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5418,7 +5418,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5474,7 +5474,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5513,7 +5513,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5552,7 +5552,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5591,7 +5591,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5630,7 +5630,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5669,7 +5669,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5722,7 +5722,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5761,7 +5761,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5800,7 +5800,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5839,7 +5839,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5878,7 +5878,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5917,7 +5917,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -5970,7 +5970,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6009,7 +6009,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6048,7 +6048,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6087,7 +6087,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6126,7 +6126,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6165,7 +6165,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6221,7 +6221,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6260,7 +6260,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6299,7 +6299,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6338,7 +6338,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6377,7 +6377,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6416,7 +6416,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6469,7 +6469,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6508,7 +6508,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6547,7 +6547,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6586,7 +6586,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6625,7 +6625,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6664,7 +6664,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6717,7 +6717,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6756,7 +6756,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6795,7 +6795,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6834,7 +6834,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6873,7 +6873,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6912,7 +6912,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -6968,7 +6968,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7007,7 +7007,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7046,7 +7046,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7085,7 +7085,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7124,7 +7124,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7163,7 +7163,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7216,7 +7216,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7255,7 +7255,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7294,7 +7294,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7333,7 +7333,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7372,7 +7372,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7411,7 +7411,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7464,7 +7464,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/zc1.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/zc1.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7503,7 +7503,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dahun.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dahun.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7542,7 +7542,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/dasu.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/dasu.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7581,7 +7581,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/jielan.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/jielan.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7620,7 +7620,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/suhuitang.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/suhuitang.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -7659,7 +7659,7 @@
 														<div class="col-md-2 pd5">
 															<div class="col-md-12 pd0 SSGL_Sub_Content_AllTable">
 																<div class="col-md-12 text-center pd0 mt10">
-																	<img src="../About/images/juzi.jpg" width="120px;" height="95px;">
+																	<img src="../../About/images/juzi.jpg" width="120px;" height="95px;">
 																</div>
 																<div class="col-md-12 pd0 mt5">
 																	<div class="col-md-2 pd0"></div>
@@ -8465,7 +8465,7 @@
 						<div class="col-md-12 pd20 RightContentBody fmt10">
 							<div class="col-md-12 pd0" style="text-align:center">
 								<a href="javascript:nextPage('tqxq')" target="ckjkda">
-									<img src="../About/images/TQ.gif" style="width:85%">
+									<img src="../../About/images/TQ.gif" style="width:85%">
 								</a>
 							</div>
 						</div>
@@ -8481,7 +8481,7 @@
 							<div id="myTabContent_tqxq" class="tab-content">
 								<div class="tab-pane fade in active" id="7t">
 										<div>
-											<img src="../About/images/7ttq.png">
+											<img src="../../About/images/7ttq.png">
 										</div>
 										<div>
 											<ul id="myTab_7txq" class="nav nav-pills">
@@ -8490,20 +8490,20 @@
 											</ul>
 											<div id="myTabContent_7txq" class="tab-content">
 												<div class="tab-pane fade in active" id="fenshi">
-													<img src="../About/images/fenshi.png">
+													<img src="../../About/images/fenshi.png">
 												</div>
 												<div class="tab-pane fade" id="shzs">
-													<img src="../About/images/shzs.png">
+													<img src="../../About/images/shzs.png">
 												</div>
 											</div>
 										</div>
 								</div>
 								<div class="tab-pane fade" id="jt">
 									<div>
-										<img src="../About/images/jttq.png">
+										<img src="../../About/images/jttq.png">
 									</div>
 									<div>
-										<img src="../About/images/fenshi.png">
+										<img src="../../About/images/fenshi.png">
 									</div>
 								</div>
 							</div>
@@ -10166,7 +10166,7 @@
 											<td>王大宝</td>
 											<td>
 												<div style="width:20px">
-													<img style="width:100%" src="../About/images/dui.png">
+													<img style="width:100%" src="../../About/images/dui.png">
 												</div>
 											</td>
 										</tr>
@@ -10176,7 +10176,7 @@
 											<td>王大宝</td>
 											<td>
 												<div style="width:20px">
-													<img style="width:100%" src="../About/images/cuo.png">
+													<img style="width:100%" src="../../About/images/cuo.png">
 												</div>
 											</td>
 										</tr>
@@ -10186,7 +10186,7 @@
 											<td>王大宝</td>
 											<td>
 												<div style="width:20px">
-													<img style="width:100%" src="../About/images/cuo.png">
+													<img style="width:100%" src="../../About/images/cuo.png">
 												</div>
 											</td>
 										</tr>-->
@@ -10213,7 +10213,7 @@
 											<td>王大宝</td>
 											<td>
 												<div style="width:20px">
-													<img style="width:100%" src="../About/images/dui.png">
+													<img style="width:100%" src="../../About/images/dui.png">
 												</div>
 											</td>
 										</tr>
@@ -10226,7 +10226,7 @@
 											<td>王大宝</td>
 											<td>
 												<div style="width:20px">
-													<img style="width:100%" src="../About/images/cuo.png">
+													<img style="width:100%" src="../../About/images/cuo.png">
 												</div>
 											</td>
 										</tr>
@@ -11184,7 +11184,7 @@
 						<div class="col-md-2 pd0"></div>
 						<div class="col-md-8 pd0">
 							<div class="col-md-12 pd0 choose_pictrue_show" style="height:222px">
-								<img src="../About/images/zc1.jpg" style="width:100%;height:100%"/>
+								<img src="../../About/images/zc1.jpg" style="width:100%;height:100%"/>
 							</div>
 						</div>
 						<div class="col-md-2 pd0"></div>
@@ -13012,7 +13012,7 @@
 				</div>
 				<div class="modal-body clearfix" style="height: auto;">
 					<div class="col-md-12 pd0">
-						<img style="width:100%" src="../About/images/cqyz.png">
+						<img style="width:100%" src="../../About/images/cqyz.png">
 					</div>
 				</div>
 				<div class="modal-footer mt20">
@@ -13322,9 +13322,9 @@
 			$(".choose_pictrue").bind("click",function(){
 				var temp = $(".choose_pictrue button").attr("title");
 				if(temp=="虾"){
-					$(".choose_pictrue_show img").attr("src","../About/images/dahun.jpg");
+					$(".choose_pictrue_show img").attr("src","../../About/images/dahun.jpg");
 				}else{
-					$(".choose_pictrue_show img").attr("src","../About/images/zc1.jpg");
+					$(".choose_pictrue_show img").attr("src","../../About/images/zc1.jpg");
 				}
 			});
 			//设置服务对象_取消隐藏本行
@@ -13344,7 +13344,7 @@
 					"<div class='col-md-2 pd5'><div class='col-md-12 pd0 "+
 					"SSGL_Sub_Content_AllTable'><div class='mt10' style='position: absolute;z-index: 1;'>"+
 					"<span class='label label-primary glyphicon glyphicon-arrow-up'>多糖</span></div>"+
-					"<div class='col-md-12 text-center pd0 mt10'><img src='../About/images/zc1.jpg' "+
+					"<div class='col-md-12 text-center pd0 mt10'><img src='../../About/images/zc1.jpg' "+
 					"width='120px;' height='95px;'></div><div class='col-md-12 pd0 mt5'><div class"+
 					"='col-md-2 pd0'></div><div class='col-md-10 pd0'><font color='#000' style='"+
 					"font-size: 15px;'>类别：主食</font></div></div><div class='col-md-12 pd0'>"+
@@ -13360,7 +13360,7 @@
 					$(".one_morning>div:last").append("<div class='col-md-2 pd5'><div class='col-md-12 pd0 "+
 					"SSGL_Sub_Content_AllTable'><div class='mt10' style='position: absolute;z-index: 1;'>"+
 					"<span class='label label-primary glyphicon glyphicon-arrow-up'>多糖</span></div>"+
-					"<div class='col-md-12 text-center pd0 mt10'><img src='../About/images/zc1.jpg' "+
+					"<div class='col-md-12 text-center pd0 mt10'><img src='../../About/images/zc1.jpg' "+
 					"width='120px;' height='95px;'></div><div class='col-md-12 pd0 mt5'><div class"+
 					"='col-md-2 pd0'></div><div class='col-md-10 pd0'><font color='#000' style='"+
 					"font-size: 15px;'>类别：主食</font></div></div><div class='col-md-12 pd0'>"+
@@ -13610,7 +13610,7 @@
 			scheduler.config.xml_date="%Y-%m-%d %H:%i";
 			//scheduler.init('scheduler_here',new Date(2017,11,18),"week");
 			scheduler.init('scheduler_here',new Date(),"week");
-			//scheduler.load("../About/samples/01_initialization_loading/data/events.xml");
+			//scheduler.load("../../About/samples/01_initialization_loading/data/events.xml");
 							
 			var events = [
 			{id:1, text:"Meeting",   start_date:"2018-05-05 14:00",end_date:"2018-05-05 17:00"},
@@ -13635,9 +13635,22 @@
 		function ssgl_tc(){
 			$('#tcxx').modal('toggle');
 		}
+
+		// $(function(){
+		// 	$.ajax({
+		// 		url:'index',
+		// 		type:'post',
+		// 		success:function (res) {
+		// 			console.log(res);
+		// 		}
+		// 	})
+		// })
+		var staff = '${staff}';
+		$('#staffName').innerText = staff;
+
 	</script>
 	
-	<link href="../About/css/calendar.css" type="text/css" rel="stylesheet">
-	<script src="../About/js/calendar.js"></script>
+	<link href="../../About/css/calendar.css" type="text/css" rel="stylesheet">
+	<script src="../../About/js/calendar.js"></script>
 </body>
 </html>
