@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.OutgoingMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.Outgoing" >
+    <id column="outgoing_id" property="outgoingId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="outgoing_reason" property="outgoingReason" jdbcType="VARCHAR" />
+    <result column="outgoing_time" property="outgoingTime" jdbcType="DATE" />
+    <result column="expectedreturn_time" property="expectedreturnTime" jdbcType="DATE" />
+    <result column="actualreturn_time" property="actualreturnTime" jdbcType="DATE" />
+    <result column="escorted" property="escorted" jdbcType="VARCHAR" />
+    <result column="relation" property="relation" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="audit_status" property="auditStatus" jdbcType="VARCHAR" />
+    <result column="audit_person" property="auditPerson" jdbcType="VARCHAR" />
+    <result column="audit_time" property="auditTime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    outgoing_id, create_by, create_date, update_by, update_date, remarks, del_flag, customer_id, 
+    outgoing_reason, outgoing_time, expectedreturn_time, actualreturn_time, escorted, 
+    relation, phone, audit_status, audit_person, audit_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from outgoing
+    where outgoing_id = #{outgoingId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from outgoing
+    where outgoing_id = #{outgoingId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.Outgoing" >
+    insert into outgoing (outgoing_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, customer_id, outgoing_reason, 
+      outgoing_time, expectedreturn_time, actualreturn_time, 
+      escorted, relation, phone, 
+      audit_status, audit_person, audit_time
+      )
+    values (#{outgoingId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{outgoingReason,jdbcType=VARCHAR}, 
+      #{outgoingTime,jdbcType=DATE}, #{expectedreturnTime,jdbcType=DATE}, #{actualreturnTime,jdbcType=DATE}, 
+      #{escorted,jdbcType=VARCHAR}, #{relation,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{auditStatus,jdbcType=VARCHAR}, #{auditPerson,jdbcType=VARCHAR}, #{auditTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.Outgoing" >
+    insert into outgoing
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="outgoingId != null" >
+        outgoing_id,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="outgoingReason != null" >
+        outgoing_reason,
+      </if>
+      <if test="outgoingTime != null" >
+        outgoing_time,
+      </if>
+      <if test="expectedreturnTime != null" >
+        expectedreturn_time,
+      </if>
+      <if test="actualreturnTime != null" >
+        actualreturn_time,
+      </if>
+      <if test="escorted != null" >
+        escorted,
+      </if>
+      <if test="relation != null" >
+        relation,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="auditStatus != null" >
+        audit_status,
+      </if>
+      <if test="auditPerson != null" >
+        audit_person,
+      </if>
+      <if test="auditTime != null" >
+        audit_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="outgoingId != null" >
+        #{outgoingId,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="outgoingReason != null" >
+        #{outgoingReason,jdbcType=VARCHAR},
+      </if>
+      <if test="outgoingTime != null" >
+        #{outgoingTime,jdbcType=DATE},
+      </if>
+      <if test="expectedreturnTime != null" >
+        #{expectedreturnTime,jdbcType=DATE},
+      </if>
+      <if test="actualreturnTime != null" >
+        #{actualreturnTime,jdbcType=DATE},
+      </if>
+      <if test="escorted != null" >
+        #{escorted,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        #{auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="auditPerson != null" >
+        #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Outgoing" >
+    update outgoing
+    <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="outgoingReason != null" >
+        outgoing_reason = #{outgoingReason,jdbcType=VARCHAR},
+      </if>
+      <if test="outgoingTime != null" >
+        outgoing_time = #{outgoingTime,jdbcType=DATE},
+      </if>
+      <if test="expectedreturnTime != null" >
+        expectedreturn_time = #{expectedreturnTime,jdbcType=DATE},
+      </if>
+      <if test="actualreturnTime != null" >
+        actualreturn_time = #{actualreturnTime,jdbcType=DATE},
+      </if>
+      <if test="escorted != null" >
+        escorted = #{escorted,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        relation = #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        audit_status = #{auditStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="auditPerson != null" >
+        audit_person = #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        audit_time = #{auditTime,jdbcType=DATE},
+      </if>
+    </set>
+    where outgoing_id = #{outgoingId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Outgoing" >
+    update outgoing
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      outgoing_reason = #{outgoingReason,jdbcType=VARCHAR},
+      outgoing_time = #{outgoingTime,jdbcType=DATE},
+      expectedreturn_time = #{expectedreturnTime,jdbcType=DATE},
+      actualreturn_time = #{actualreturnTime,jdbcType=DATE},
+      escorted = #{escorted,jdbcType=VARCHAR},
+      relation = #{relation,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      audit_status = #{auditStatus,jdbcType=VARCHAR},
+      audit_person = #{auditPerson,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=DATE}
+    where outgoing_id = #{outgoingId,jdbcType=BIGINT}
+  </update>
+</mapper>

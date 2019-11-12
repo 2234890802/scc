@@ -3,17 +3,24 @@
 <mapper namespace="cn.scc.mapper.FoodsMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Foods" >
     <id column="food_id" property="foodId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
     <result column="food_name" property="foodName" jdbcType="VARCHAR" />
     <result column="food_type" property="foodType" jdbcType="VARCHAR" />
-    <result column="tag" property="tag" jdbcType="VARCHAR" />
-    <result column="price" property="price" jdbcType="DECIMAL" />
-    <result column="img" property="img" jdbcType="VARCHAR" />
-    <result column="steamed" property="steamed" jdbcType="VARCHAR" />
-    <result column="supply_day" property="supplyDay" jdbcType="VARCHAR" />
+    <result column="food_tag" property="foodTag" jdbcType="VARCHAR" />
+    <result column="food_price" property="foodPrice" jdbcType="DECIMAL" />
+    <result column="food_picture" property="foodPicture" jdbcType="VARCHAR" />
+    <result column="momal_flag" property="momalFlag" jdbcType="VARCHAR" />
+    <result column="supply_week" property="supplyWeek" jdbcType="VARCHAR" />
     <result column="supply_type" property="supplyType" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    food_id, food_name, food_type, tag, price, img, steamed, supply_day, supply_type
+    food_id, create_by, create_date, update_by, update_date, remarks, del_flag, food_name, 
+    food_type, food_tag, food_price, food_picture, momal_flag, supply_week, supply_type
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -26,12 +33,18 @@
     where food_id = #{foodId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Foods" >
-    insert into foods (food_id, food_name, food_type, 
-      tag, price, img, steamed, 
-      supply_day, supply_type)
-    values (#{foodId,jdbcType=BIGINT}, #{foodName,jdbcType=VARCHAR}, #{foodType,jdbcType=VARCHAR}, 
-      #{tag,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{img,jdbcType=VARCHAR}, #{steamed,jdbcType=VARCHAR}, 
-      #{supplyDay,jdbcType=VARCHAR}, #{supplyType,jdbcType=VARCHAR})
+    insert into foods (food_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, food_name, food_type, 
+      food_tag, food_price, food_picture, 
+      momal_flag, supply_week, supply_type
+      )
+    values (#{foodId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{foodName,jdbcType=VARCHAR}, #{foodType,jdbcType=VARCHAR}, 
+      #{foodTag,jdbcType=VARCHAR}, #{foodPrice,jdbcType=DECIMAL}, #{foodPicture,jdbcType=VARCHAR}, 
+      #{momalFlag,jdbcType=VARCHAR}, #{supplyWeek,jdbcType=VARCHAR}, #{supplyType,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Foods" >
     insert into foods
@@ -39,26 +52,44 @@
       <if test="foodId != null" >
         food_id,
       </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
       <if test="foodName != null" >
         food_name,
       </if>
       <if test="foodType != null" >
         food_type,
       </if>
-      <if test="tag != null" >
-        tag,
+      <if test="foodTag != null" >
+        food_tag,
       </if>
-      <if test="price != null" >
-        price,
+      <if test="foodPrice != null" >
+        food_price,
       </if>
-      <if test="img != null" >
-        img,
+      <if test="foodPicture != null" >
+        food_picture,
       </if>
-      <if test="steamed != null" >
-        steamed,
+      <if test="momalFlag != null" >
+        momal_flag,
       </if>
-      <if test="supplyDay != null" >
-        supply_day,
+      <if test="supplyWeek != null" >
+        supply_week,
       </if>
       <if test="supplyType != null" >
         supply_type,
@@ -68,26 +99,44 @@
       <if test="foodId != null" >
         #{foodId,jdbcType=BIGINT},
       </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
       <if test="foodName != null" >
         #{foodName,jdbcType=VARCHAR},
       </if>
       <if test="foodType != null" >
         #{foodType,jdbcType=VARCHAR},
       </if>
-      <if test="tag != null" >
-        #{tag,jdbcType=VARCHAR},
+      <if test="foodTag != null" >
+        #{foodTag,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
-        #{price,jdbcType=DECIMAL},
+      <if test="foodPrice != null" >
+        #{foodPrice,jdbcType=DECIMAL},
       </if>
-      <if test="img != null" >
-        #{img,jdbcType=VARCHAR},
+      <if test="foodPicture != null" >
+        #{foodPicture,jdbcType=VARCHAR},
       </if>
-      <if test="steamed != null" >
-        #{steamed,jdbcType=VARCHAR},
+      <if test="momalFlag != null" >
+        #{momalFlag,jdbcType=VARCHAR},
       </if>
-      <if test="supplyDay != null" >
-        #{supplyDay,jdbcType=VARCHAR},
+      <if test="supplyWeek != null" >
+        #{supplyWeek,jdbcType=VARCHAR},
       </if>
       <if test="supplyType != null" >
         #{supplyType,jdbcType=VARCHAR},
@@ -97,26 +146,44 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Foods" >
     update foods
     <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
       <if test="foodName != null" >
         food_name = #{foodName,jdbcType=VARCHAR},
       </if>
       <if test="foodType != null" >
         food_type = #{foodType,jdbcType=VARCHAR},
       </if>
-      <if test="tag != null" >
-        tag = #{tag,jdbcType=VARCHAR},
+      <if test="foodTag != null" >
+        food_tag = #{foodTag,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
-        price = #{price,jdbcType=DECIMAL},
+      <if test="foodPrice != null" >
+        food_price = #{foodPrice,jdbcType=DECIMAL},
       </if>
-      <if test="img != null" >
-        img = #{img,jdbcType=VARCHAR},
+      <if test="foodPicture != null" >
+        food_picture = #{foodPicture,jdbcType=VARCHAR},
       </if>
-      <if test="steamed != null" >
-        steamed = #{steamed,jdbcType=VARCHAR},
+      <if test="momalFlag != null" >
+        momal_flag = #{momalFlag,jdbcType=VARCHAR},
       </if>
-      <if test="supplyDay != null" >
-        supply_day = #{supplyDay,jdbcType=VARCHAR},
+      <if test="supplyWeek != null" >
+        supply_week = #{supplyWeek,jdbcType=VARCHAR},
       </if>
       <if test="supplyType != null" >
         supply_type = #{supplyType,jdbcType=VARCHAR},
@@ -126,13 +193,19 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Foods" >
     update foods
-    set food_name = #{foodName,jdbcType=VARCHAR},
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      food_name = #{foodName,jdbcType=VARCHAR},
       food_type = #{foodType,jdbcType=VARCHAR},
-      tag = #{tag,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DECIMAL},
-      img = #{img,jdbcType=VARCHAR},
-      steamed = #{steamed,jdbcType=VARCHAR},
-      supply_day = #{supplyDay,jdbcType=VARCHAR},
+      food_tag = #{foodTag,jdbcType=VARCHAR},
+      food_price = #{foodPrice,jdbcType=DECIMAL},
+      food_picture = #{foodPicture,jdbcType=VARCHAR},
+      momal_flag = #{momalFlag,jdbcType=VARCHAR},
+      supply_week = #{supplyWeek,jdbcType=VARCHAR},
       supply_type = #{supplyType,jdbcType=VARCHAR}
     where food_id = #{foodId,jdbcType=BIGINT}
   </update>

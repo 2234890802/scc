@@ -2,8 +2,8 @@ package cn.scc.entity;
 
 import java.util.Date;
 
-public class Meals {
-    private Long mealId;
+public class NursingRecord {
+    private Long nursingRecordId;
 
     private String createBy;
 
@@ -19,18 +19,22 @@ public class Meals {
 
     private Long customerId;
 
-    private Long foodId;
+    private Long nursingId;
 
-    private Date foodDate;
+    private Date nursingTime;
 
-    private String foodWeek;
+    private String nursingContent;
 
-    public Long getMealId() {
-        return mealId;
+    private Long nursingCount;
+
+    private Long staffId;
+
+    public Long getNursingRecordId() {
+        return nursingRecordId;
     }
 
-    public void setMealId(Long mealId) {
-        this.mealId = mealId;
+    public void setNursingRecordId(Long nursingRecordId) {
+        this.nursingRecordId = nursingRecordId;
     }
 
     public String getCreateBy() {
@@ -89,27 +93,43 @@ public class Meals {
         this.customerId = customerId;
     }
 
-    public Long getFoodId() {
-        return foodId;
+    public Long getNursingId() {
+        return nursingId;
     }
 
-    public void setFoodId(Long foodId) {
-        this.foodId = foodId;
+    public void setNursingId(Long nursingId) {
+        this.nursingId = nursingId;
     }
 
-    public Date getFoodDate() {
-        return foodDate;
+    public Date getNursingTime() {
+        return nursingTime;
     }
 
-    public void setFoodDate(Date foodDate) {
-        this.foodDate = foodDate;
+    public void setNursingTime(Date nursingTime) {
+        this.nursingTime = nursingTime;
     }
 
-    public String getFoodWeek() {
-        return foodWeek;
+    public String getNursingContent() {
+        return nursingContent;
     }
 
-    public void setFoodWeek(String foodWeek) {
-        this.foodWeek = foodWeek == null ? null : foodWeek.trim();
+    public void setNursingContent(String nursingContent) {
+        this.nursingContent = nursingContent == null ? null : nursingContent.trim();
+    }
+
+    public Long getNursingCount() {
+        return nursingCount;
+    }
+
+    public void setNursingCount(Long nursingCount) {
+        this.nursingCount = nursingCount;
+    }
+
+    public Long getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(Long staffId) {
+        this.staffId = staffId;
     }
 }

@@ -1,10 +1,9 @@
 package cn.scc.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
-public class Nursing {
-    private Long nursingId;
+public class Service {
+    private Long serviceId;
 
     private String createBy;
 
@@ -18,22 +17,24 @@ public class Nursing {
 
     private String delFlag;
 
-    private String nursingName;
+    private Long customerId;
 
-    private BigDecimal nursingPrice;
+    private Long nursingId;
 
-    private String describe;
+    private Long amount;
 
-    private String incrementFlag;
+    private Date maturityTime;
 
-    private String status;
+    private Date buyTime;
 
-    public Long getNursingId() {
-        return nursingId;
+    private String otherInfo;
+
+    public Long getServiceId() {
+        return serviceId;
     }
 
-    public void setNursingId(Long nursingId) {
-        this.nursingId = nursingId;
+    public void setServiceId(Long serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getCreateBy() {
@@ -84,43 +85,51 @@ public class Nursing {
         this.delFlag = delFlag == null ? null : delFlag.trim();
     }
 
-    public String getNursingName() {
-        return nursingName;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setNursingName(String nursingName) {
-        this.nursingName = nursingName == null ? null : nursingName.trim();
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
-    public BigDecimal getNursingPrice() {
-        return nursingPrice;
+    public Long getNursingId() {
+        return nursingId;
     }
 
-    public void setNursingPrice(BigDecimal nursingPrice) {
-        this.nursingPrice = nursingPrice;
+    public void setNursingId(Long nursingId) {
+        this.nursingId = nursingId;
     }
 
-    public String getDescribe() {
-        return describe;
+    public Long getAmount() {
+        return amount;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe == null ? null : describe.trim();
+    public void setAmount(Long amount) {
+        this.amount = amount;
     }
 
-    public String getIncrementFlag() {
-        return incrementFlag;
+    public Date getMaturityTime() {
+        return maturityTime;
     }
 
-    public void setIncrementFlag(String incrementFlag) {
-        this.incrementFlag = incrementFlag == null ? null : incrementFlag.trim();
+    public void setMaturityTime(Date maturityTime) {
+        this.maturityTime = maturityTime;
     }
 
-    public String getStatus() {
-        return status;
+    public Date getBuyTime() {
+        return buyTime;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setBuyTime(Date buyTime) {
+        this.buyTime = buyTime;
+    }
+
+    public String getOtherInfo() {
+        return otherInfo;
+    }
+
+    public void setOtherInfo(String otherInfo) {
+        this.otherInfo = otherInfo == null ? null : otherInfo.trim();
     }
 }

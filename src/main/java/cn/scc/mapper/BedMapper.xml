@@ -3,12 +3,21 @@
 <mapper namespace="cn.scc.mapper.BedMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Bed" >
     <id column="bed_id" property="bedId" jdbcType="BIGINT" />
-    <result column="room" property="room" jdbcType="VARCHAR" />
-    <result column="floor" property="floor" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="room_number" property="roomNumber" jdbcType="VARCHAR" />
+    <result column="bed_status" property="bedStatus" jdbcType="VARCHAR" />
+    <result column="position_type" property="positionType" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    bed_id, room, floor, status
+    bed_id, create_by, create_date, update_by, update_date, remarks, del_flag, room_number, 
+    bed_status, position_type, name, sort
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -21,10 +30,16 @@
     where bed_id = #{bedId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Bed" >
-    insert into bed (bed_id, room, floor, 
-      status)
-    values (#{bedId,jdbcType=BIGINT}, #{room,jdbcType=VARCHAR}, #{floor,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR})
+    insert into bed (bed_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, room_number, bed_status, 
+      position_type, name, sort
+      )
+    values (#{bedId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{roomNumber,jdbcType=VARCHAR}, #{bedStatus,jdbcType=VARCHAR}, 
+      #{positionType,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sort,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Bed" >
     insert into bed
@@ -32,51 +47,131 @@
       <if test="bedId != null" >
         bed_id,
       </if>
-      <if test="room != null" >
-        room,
+      <if test="createBy != null" >
+        create_by,
       </if>
-      <if test="floor != null" >
-        floor,
+      <if test="createDate != null" >
+        create_date,
       </if>
-      <if test="status != null" >
-        status,
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="roomNumber != null" >
+        room_number,
+      </if>
+      <if test="bedStatus != null" >
+        bed_status,
+      </if>
+      <if test="positionType != null" >
+        position_type,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sort != null" >
+        sort,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="bedId != null" >
         #{bedId,jdbcType=BIGINT},
       </if>
-      <if test="room != null" >
-        #{room,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="floor != null" >
-        #{floor,jdbcType=VARCHAR},
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
       </if>
-      <if test="status != null" >
-        #{status,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="roomNumber != null" >
+        #{roomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bedStatus != null" >
+        #{bedStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="positionType != null" >
+        #{positionType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Bed" >
     update bed
     <set >
-      <if test="room != null" >
-        room = #{room,jdbcType=VARCHAR},
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
       </if>
-      <if test="floor != null" >
-        floor = #{floor,jdbcType=VARCHAR},
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
       </if>
-      <if test="status != null" >
-        status = #{status,jdbcType=VARCHAR},
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="roomNumber != null" >
+        room_number = #{roomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bedStatus != null" >
+        bed_status = #{bedStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="positionType != null" >
+        position_type = #{positionType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=VARCHAR},
       </if>
     </set>
     where bed_id = #{bedId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Bed" >
     update bed
-    set room = #{room,jdbcType=VARCHAR},
-      floor = #{floor,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR}
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      room_number = #{roomNumber,jdbcType=VARCHAR},
+      bed_status = #{bedStatus,jdbcType=VARCHAR},
+      position_type = #{positionType,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=VARCHAR}
     where bed_id = #{bedId,jdbcType=BIGINT}
   </update>
 </mapper>

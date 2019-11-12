@@ -2,8 +2,8 @@ package cn.scc.entity;
 
 import java.util.Date;
 
-public class Retreat {
-    private Long retreatId;
+public class Outgoing {
+    private Long outgoingId;
 
     private String createBy;
 
@@ -19,28 +19,32 @@ public class Retreat {
 
     private Long customerId;
 
-    private Date retreatTime;
+    private String outgoingReason;
 
-    private String retreatType;
+    private Date outgoingTime;
 
-    private String retreatReason;
+    private Date expectedreturnTime;
 
-    private String status;
+    private Date actualreturnTime;
 
-    private Date askTime;
+    private String escorted;
 
-    private String auditOpinion;
+    private String relation;
+
+    private String phone;
+
+    private String auditStatus;
 
     private String auditPerson;
 
     private Date auditTime;
 
-    public Long getRetreatId() {
-        return retreatId;
+    public Long getOutgoingId() {
+        return outgoingId;
     }
 
-    public void setRetreatId(Long retreatId) {
-        this.retreatId = retreatId;
+    public void setOutgoingId(Long outgoingId) {
+        this.outgoingId = outgoingId;
     }
 
     public String getCreateBy() {
@@ -99,52 +103,68 @@ public class Retreat {
         this.customerId = customerId;
     }
 
-    public Date getRetreatTime() {
-        return retreatTime;
+    public String getOutgoingReason() {
+        return outgoingReason;
     }
 
-    public void setRetreatTime(Date retreatTime) {
-        this.retreatTime = retreatTime;
+    public void setOutgoingReason(String outgoingReason) {
+        this.outgoingReason = outgoingReason == null ? null : outgoingReason.trim();
     }
 
-    public String getRetreatType() {
-        return retreatType;
+    public Date getOutgoingTime() {
+        return outgoingTime;
     }
 
-    public void setRetreatType(String retreatType) {
-        this.retreatType = retreatType == null ? null : retreatType.trim();
+    public void setOutgoingTime(Date outgoingTime) {
+        this.outgoingTime = outgoingTime;
     }
 
-    public String getRetreatReason() {
-        return retreatReason;
+    public Date getExpectedreturnTime() {
+        return expectedreturnTime;
     }
 
-    public void setRetreatReason(String retreatReason) {
-        this.retreatReason = retreatReason == null ? null : retreatReason.trim();
+    public void setExpectedreturnTime(Date expectedreturnTime) {
+        this.expectedreturnTime = expectedreturnTime;
     }
 
-    public String getStatus() {
-        return status;
+    public Date getActualreturnTime() {
+        return actualreturnTime;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setActualreturnTime(Date actualreturnTime) {
+        this.actualreturnTime = actualreturnTime;
     }
 
-    public Date getAskTime() {
-        return askTime;
+    public String getEscorted() {
+        return escorted;
     }
 
-    public void setAskTime(Date askTime) {
-        this.askTime = askTime;
+    public void setEscorted(String escorted) {
+        this.escorted = escorted == null ? null : escorted.trim();
     }
 
-    public String getAuditOpinion() {
-        return auditOpinion;
+    public String getRelation() {
+        return relation;
     }
 
-    public void setAuditOpinion(String auditOpinion) {
-        this.auditOpinion = auditOpinion == null ? null : auditOpinion.trim();
+    public void setRelation(String relation) {
+        this.relation = relation == null ? null : relation.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getAuditStatus() {
+        return auditStatus;
+    }
+
+    public void setAuditStatus(String auditStatus) {
+        this.auditStatus = auditStatus == null ? null : auditStatus.trim();
     }
 
     public String getAuditPerson() {

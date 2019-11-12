@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.CustomerBedMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.CustomerBed" >
+    <id column="customer_bed_id" property="customerBedId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="nursing_id" property="nursingId" jdbcType="BIGINT" />
+    <result column="nursing_time" property="nursingTime" jdbcType="DATE" />
+    <result column="nursing_content" property="nursingContent" jdbcType="VARCHAR" />
+    <result column="nursing_count" property="nursingCount" jdbcType="BIGINT" />
+    <result column="staff_id" property="staffId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    customer_bed_id, create_by, create_date, update_by, update_date, remarks, del_flag, 
+    customer_id, nursing_id, nursing_time, nursing_content, nursing_count, staff_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from customer_bed
+    where customer_bed_id = #{customerBedId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from customer_bed
+    where customer_bed_id = #{customerBedId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.CustomerBed" >
+    insert into customer_bed (customer_bed_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, customer_id, nursing_id, 
+      nursing_time, nursing_content, nursing_count, 
+      staff_id)
+    values (#{customerBedId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{nursingId,jdbcType=BIGINT}, 
+      #{nursingTime,jdbcType=DATE}, #{nursingContent,jdbcType=VARCHAR}, #{nursingCount,jdbcType=BIGINT}, 
+      #{staffId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.CustomerBed" >
+    insert into customer_bed
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="customerBedId != null" >
+        customer_bed_id,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="nursingId != null" >
+        nursing_id,
+      </if>
+      <if test="nursingTime != null" >
+        nursing_time,
+      </if>
+      <if test="nursingContent != null" >
+        nursing_content,
+      </if>
+      <if test="nursingCount != null" >
+        nursing_count,
+      </if>
+      <if test="staffId != null" >
+        staff_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="customerBedId != null" >
+        #{customerBedId,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingId != null" >
+        #{nursingId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingTime != null" >
+        #{nursingTime,jdbcType=DATE},
+      </if>
+      <if test="nursingContent != null" >
+        #{nursingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="nursingCount != null" >
+        #{nursingCount,jdbcType=BIGINT},
+      </if>
+      <if test="staffId != null" >
+        #{staffId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.CustomerBed" >
+    update customer_bed
+    <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingId != null" >
+        nursing_id = #{nursingId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingTime != null" >
+        nursing_time = #{nursingTime,jdbcType=DATE},
+      </if>
+      <if test="nursingContent != null" >
+        nursing_content = #{nursingContent,jdbcType=VARCHAR},
+      </if>
+      <if test="nursingCount != null" >
+        nursing_count = #{nursingCount,jdbcType=BIGINT},
+      </if>
+      <if test="staffId != null" >
+        staff_id = #{staffId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where customer_bed_id = #{customerBedId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.CustomerBed" >
+    update customer_bed
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      nursing_id = #{nursingId,jdbcType=BIGINT},
+      nursing_time = #{nursingTime,jdbcType=DATE},
+      nursing_content = #{nursingContent,jdbcType=VARCHAR},
+      nursing_count = #{nursingCount,jdbcType=BIGINT},
+      staff_id = #{staffId,jdbcType=BIGINT}
+    where customer_bed_id = #{customerBedId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -2,8 +2,8 @@ package cn.scc.entity;
 
 import java.util.Date;
 
-public class Meals {
-    private Long mealId;
+public class NursingLevel {
+    private Long id;
 
     private String createBy;
 
@@ -17,20 +17,16 @@ public class Meals {
 
     private String delFlag;
 
-    private Long customerId;
+    private String levelName;
 
-    private Long foodId;
+    private String levelStatus;
 
-    private Date foodDate;
-
-    private String foodWeek;
-
-    public Long getMealId() {
-        return mealId;
+    public Long getId() {
+        return id;
     }
 
-    public void setMealId(Long mealId) {
-        this.mealId = mealId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCreateBy() {
@@ -81,35 +77,19 @@ public class Meals {
         this.delFlag = delFlag == null ? null : delFlag.trim();
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public String getLevelName() {
+        return levelName;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setLevelName(String levelName) {
+        this.levelName = levelName == null ? null : levelName.trim();
     }
 
-    public Long getFoodId() {
-        return foodId;
+    public String getLevelStatus() {
+        return levelStatus;
     }
 
-    public void setFoodId(Long foodId) {
-        this.foodId = foodId;
-    }
-
-    public Date getFoodDate() {
-        return foodDate;
-    }
-
-    public void setFoodDate(Date foodDate) {
-        this.foodDate = foodDate;
-    }
-
-    public String getFoodWeek() {
-        return foodWeek;
-    }
-
-    public void setFoodWeek(String foodWeek) {
-        this.foodWeek = foodWeek == null ? null : foodWeek.trim();
+    public void setLevelStatus(String levelStatus) {
+        this.levelStatus = levelStatus == null ? null : levelStatus.trim();
     }
 }

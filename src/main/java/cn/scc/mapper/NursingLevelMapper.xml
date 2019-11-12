@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.scc.mapper.MealsMapper" >
-  <resultMap id="BaseResultMap" type="cn.scc.entity.Meals" >
-    <id column="meal_id" property="mealId" jdbcType="BIGINT" />
+<mapper namespace="cn.scc.mapper.NursingLevelMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.NursingLevel" >
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="create_by" property="createBy" jdbcType="VARCHAR" />
     <result column="create_date" property="createDate" jdbcType="DATE" />
     <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
     <result column="update_date" property="updateDate" jdbcType="DATE" />
     <result column="remarks" property="remarks" jdbcType="VARCHAR" />
     <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
-    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
-    <result column="food_id" property="foodId" jdbcType="BIGINT" />
-    <result column="food_date" property="foodDate" jdbcType="DATE" />
-    <result column="food_week" property="foodWeek" jdbcType="VARCHAR" />
+    <result column="level_name" property="levelName" jdbcType="VARCHAR" />
+    <result column="level_status" property="levelStatus" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    meal_id, create_by, create_date, update_by, update_date, remarks, del_flag, customer_id, 
-    food_id, food_date, food_week
+    id, create_by, create_date, update_by, update_date, remarks, del_flag, level_name, 
+    level_status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from meals
-    where meal_id = #{mealId,jdbcType=BIGINT}
+    from nursing_level
+    where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from meals
-    where meal_id = #{mealId,jdbcType=BIGINT}
+    delete from nursing_level
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.scc.entity.Meals" >
-    insert into meals (meal_id, create_by, create_date, 
+  <insert id="insert" parameterType="cn.scc.entity.NursingLevel" >
+    insert into nursing_level (id, create_by, create_date, 
       update_by, update_date, remarks, 
-      del_flag, customer_id, food_id, 
-      food_date, food_week)
-    values (#{mealId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      del_flag, level_name, level_status
+      )
+    values (#{id,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
       #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
-      #{delFlag,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{foodId,jdbcType=BIGINT}, 
-      #{foodDate,jdbcType=DATE}, #{foodWeek,jdbcType=VARCHAR})
+      #{delFlag,jdbcType=VARCHAR}, #{levelName,jdbcType=VARCHAR}, #{levelStatus,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="cn.scc.entity.Meals" >
-    insert into meals
+  <insert id="insertSelective" parameterType="cn.scc.entity.NursingLevel" >
+    insert into nursing_level
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="mealId != null" >
-        meal_id,
+      <if test="id != null" >
+        id,
       </if>
       <if test="createBy != null" >
         create_by,
@@ -62,22 +60,16 @@
       <if test="delFlag != null" >
         del_flag,
       </if>
-      <if test="customerId != null" >
-        customer_id,
+      <if test="levelName != null" >
+        level_name,
       </if>
-      <if test="foodId != null" >
-        food_id,
-      </if>
-      <if test="foodDate != null" >
-        food_date,
-      </if>
-      <if test="foodWeek != null" >
-        food_week,
+      <if test="levelStatus != null" >
+        level_status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="mealId != null" >
-        #{mealId,jdbcType=BIGINT},
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="createBy != null" >
         #{createBy,jdbcType=VARCHAR},
@@ -97,22 +89,16 @@
       <if test="delFlag != null" >
         #{delFlag,jdbcType=VARCHAR},
       </if>
-      <if test="customerId != null" >
-        #{customerId,jdbcType=BIGINT},
+      <if test="levelName != null" >
+        #{levelName,jdbcType=VARCHAR},
       </if>
-      <if test="foodId != null" >
-        #{foodId,jdbcType=BIGINT},
-      </if>
-      <if test="foodDate != null" >
-        #{foodDate,jdbcType=DATE},
-      </if>
-      <if test="foodWeek != null" >
-        #{foodWeek,jdbcType=VARCHAR},
+      <if test="levelStatus != null" >
+        #{levelStatus,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Meals" >
-    update meals
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.NursingLevel" >
+    update nursing_level
     <set >
       <if test="createBy != null" >
         create_by = #{createBy,jdbcType=VARCHAR},
@@ -132,33 +118,25 @@
       <if test="delFlag != null" >
         del_flag = #{delFlag,jdbcType=VARCHAR},
       </if>
-      <if test="customerId != null" >
-        customer_id = #{customerId,jdbcType=BIGINT},
+      <if test="levelName != null" >
+        level_name = #{levelName,jdbcType=VARCHAR},
       </if>
-      <if test="foodId != null" >
-        food_id = #{foodId,jdbcType=BIGINT},
-      </if>
-      <if test="foodDate != null" >
-        food_date = #{foodDate,jdbcType=DATE},
-      </if>
-      <if test="foodWeek != null" >
-        food_week = #{foodWeek,jdbcType=VARCHAR},
+      <if test="levelStatus != null" >
+        level_status = #{levelStatus,jdbcType=VARCHAR},
       </if>
     </set>
-    where meal_id = #{mealId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Meals" >
-    update meals
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.NursingLevel" >
+    update nursing_level
     set create_by = #{createBy,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=DATE},
       update_by = #{updateBy,jdbcType=VARCHAR},
       update_date = #{updateDate,jdbcType=DATE},
       remarks = #{remarks,jdbcType=VARCHAR},
       del_flag = #{delFlag,jdbcType=VARCHAR},
-      customer_id = #{customerId,jdbcType=BIGINT},
-      food_id = #{foodId,jdbcType=BIGINT},
-      food_date = #{foodDate,jdbcType=DATE},
-      food_week = #{foodWeek,jdbcType=VARCHAR}
-    where meal_id = #{mealId,jdbcType=BIGINT}
+      level_name = #{levelName,jdbcType=VARCHAR},
+      level_status = #{levelStatus,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

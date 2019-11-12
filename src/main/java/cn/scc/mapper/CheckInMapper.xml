@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.scc.mapper.CheckInMapper" >
+  <resultMap id="BaseResultMap" type="cn.scc.entity.CheckIn" >
+    <id column="check_in_id" property="checkInId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
+    <result column="customer_name" property="customerName" jdbcType="VARCHAR" />
+    <result column="customer_age" property="customerAge" jdbcType="BIGINT" />
+    <result column="customer_sex" property="customerSex" jdbcType="VARCHAR" />
+    <result column="id_card" property="idCard" jdbcType="VARCHAR" />
+    <result column="room_number" property="roomNumber" jdbcType="VARCHAR" />
+    <result column="building_number" property="buildingNumber" jdbcType="VARCHAR" />
+    <result column="record_id" property="recordId" jdbcType="VARCHAR" />
+    <result column="elder_type" property="elderType" jdbcType="VARCHAR" />
+    <result column="check_in_date" property="checkInDate" jdbcType="DATE" />
+    <result column="expiration_date" property="expirationDate" jdbcType="DATE" />
+    <result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
+    <result column="bed_id" property="bedId" jdbcType="BIGINT" />
+    <result column="psychosomaticstate" property="psychosomaticstate" jdbcType="VARCHAR" />
+    <result column="attention" property="attention" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="height" property="height" jdbcType="VARCHAR" />
+    <result column="marital_status" property="maritalStatus" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="VARCHAR" />
+    <result column="blood_type" property="bloodType" jdbcType="VARCHAR" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    check_in_id, create_by, create_date, update_by, update_date, remarks, del_flag, customer_name, 
+    customer_age, customer_sex, id_card, room_number, building_number, record_id, elder_type, 
+    check_in_date, expiration_date, contact_tel, bed_id, psychosomaticstate, attention, 
+    birthday, height, marital_status, weight, blood_type, file_path
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from check_in
+    where check_in_id = #{checkInId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from check_in
+    where check_in_id = #{checkInId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cn.scc.entity.CheckIn" >
+    insert into check_in (check_in_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, customer_name, customer_age, 
+      customer_sex, id_card, room_number, 
+      building_number, record_id, elder_type, 
+      check_in_date, expiration_date, contact_tel, 
+      bed_id, psychosomaticstate, attention, 
+      birthday, height, marital_status, 
+      weight, blood_type, file_path
+      )
+    values (#{checkInId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR}, #{customerAge,jdbcType=BIGINT}, 
+      #{customerSex,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{roomNumber,jdbcType=VARCHAR}, 
+      #{buildingNumber,jdbcType=VARCHAR}, #{recordId,jdbcType=VARCHAR}, #{elderType,jdbcType=VARCHAR}, 
+      #{checkInDate,jdbcType=DATE}, #{expirationDate,jdbcType=DATE}, #{contactTel,jdbcType=VARCHAR}, 
+      #{bedId,jdbcType=BIGINT}, #{psychosomaticstate,jdbcType=VARCHAR}, #{attention,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE}, #{height,jdbcType=VARCHAR}, #{maritalStatus,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{bloodType,jdbcType=VARCHAR}, #{filePath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.scc.entity.CheckIn" >
+    insert into check_in
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="checkInId != null" >
+        check_in_id,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
+      </if>
+      <if test="customerName != null" >
+        customer_name,
+      </if>
+      <if test="customerAge != null" >
+        customer_age,
+      </if>
+      <if test="customerSex != null" >
+        customer_sex,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="roomNumber != null" >
+        room_number,
+      </if>
+      <if test="buildingNumber != null" >
+        building_number,
+      </if>
+      <if test="recordId != null" >
+        record_id,
+      </if>
+      <if test="elderType != null" >
+        elder_type,
+      </if>
+      <if test="checkInDate != null" >
+        check_in_date,
+      </if>
+      <if test="expirationDate != null" >
+        expiration_date,
+      </if>
+      <if test="contactTel != null" >
+        contact_tel,
+      </if>
+      <if test="bedId != null" >
+        bed_id,
+      </if>
+      <if test="psychosomaticstate != null" >
+        psychosomaticstate,
+      </if>
+      <if test="attention != null" >
+        attention,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="bloodType != null" >
+        blood_type,
+      </if>
+      <if test="filePath != null" >
+        file_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="checkInId != null" >
+        #{checkInId,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAge != null" >
+        #{customerAge,jdbcType=BIGINT},
+      </if>
+      <if test="customerSex != null" >
+        #{customerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="roomNumber != null" >
+        #{roomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingNumber != null" >
+        #{buildingNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null" >
+        #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="elderType != null" >
+        #{elderType,jdbcType=VARCHAR},
+      </if>
+      <if test="checkInDate != null" >
+        #{checkInDate,jdbcType=DATE},
+      </if>
+      <if test="expirationDate != null" >
+        #{expirationDate,jdbcType=DATE},
+      </if>
+      <if test="contactTel != null" >
+        #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="bedId != null" >
+        #{bedId,jdbcType=BIGINT},
+      </if>
+      <if test="psychosomaticstate != null" >
+        #{psychosomaticstate,jdbcType=VARCHAR},
+      </if>
+      <if test="attention != null" >
+        #{attention,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        #{maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodType != null" >
+        #{bloodType,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.CheckIn" >
+    update check_in
+    <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="customerName != null" >
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="customerAge != null" >
+        customer_age = #{customerAge,jdbcType=BIGINT},
+      </if>
+      <if test="customerSex != null" >
+        customer_sex = #{customerSex,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="roomNumber != null" >
+        room_number = #{roomNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingNumber != null" >
+        building_number = #{buildingNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="recordId != null" >
+        record_id = #{recordId,jdbcType=VARCHAR},
+      </if>
+      <if test="elderType != null" >
+        elder_type = #{elderType,jdbcType=VARCHAR},
+      </if>
+      <if test="checkInDate != null" >
+        check_in_date = #{checkInDate,jdbcType=DATE},
+      </if>
+      <if test="expirationDate != null" >
+        expiration_date = #{expirationDate,jdbcType=DATE},
+      </if>
+      <if test="contactTel != null" >
+        contact_tel = #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="bedId != null" >
+        bed_id = #{bedId,jdbcType=BIGINT},
+      </if>
+      <if test="psychosomaticstate != null" >
+        psychosomaticstate = #{psychosomaticstate,jdbcType=VARCHAR},
+      </if>
+      <if test="attention != null" >
+        attention = #{attention,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="height != null" >
+        height = #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="maritalStatus != null" >
+        marital_status = #{maritalStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodType != null" >
+        blood_type = #{bloodType,jdbcType=VARCHAR},
+      </if>
+      <if test="filePath != null" >
+        file_path = #{filePath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where check_in_id = #{checkInId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.scc.entity.CheckIn" >
+    update check_in
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_age = #{customerAge,jdbcType=BIGINT},
+      customer_sex = #{customerSex,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      room_number = #{roomNumber,jdbcType=VARCHAR},
+      building_number = #{buildingNumber,jdbcType=VARCHAR},
+      record_id = #{recordId,jdbcType=VARCHAR},
+      elder_type = #{elderType,jdbcType=VARCHAR},
+      check_in_date = #{checkInDate,jdbcType=DATE},
+      expiration_date = #{expirationDate,jdbcType=DATE},
+      contact_tel = #{contactTel,jdbcType=VARCHAR},
+      bed_id = #{bedId,jdbcType=BIGINT},
+      psychosomaticstate = #{psychosomaticstate,jdbcType=VARCHAR},
+      attention = #{attention,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      height = #{height,jdbcType=VARCHAR},
+      marital_status = #{maritalStatus,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=VARCHAR},
+      blood_type = #{bloodType,jdbcType=VARCHAR},
+      file_path = #{filePath,jdbcType=VARCHAR}
+    where check_in_id = #{checkInId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -2,116 +2,223 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.RetreatMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Retreat" >
-    <id column="id" property="id" jdbcType="BIGINT" />
+    <id column="retreat_id" property="retreatId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
     <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="retreat_time" property="retreatTime" jdbcType="DATE" />
     <result column="retreat_type" property="retreatType" jdbcType="VARCHAR" />
-    <result column="reason" property="reason" jdbcType="VARCHAR" />
-    <result column="retreat_date" property="retreatDate" jdbcType="DATE" />
-    <result column="apply_date" property="applyDate" jdbcType="DATE" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="retreat_reason" property="retreatReason" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="ask_time" property="askTime" jdbcType="DATE" />
+    <result column="audit_opinion" property="auditOpinion" jdbcType="VARCHAR" />
+    <result column="audit_person" property="auditPerson" jdbcType="VARCHAR" />
+    <result column="audit_time" property="auditTime" jdbcType="DATE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, customer_id, retreat_type, reason, retreat_date, apply_date, remark
+    retreat_id, create_by, create_date, update_by, update_date, remarks, del_flag, customer_id, 
+    retreat_time, retreat_type, retreat_reason, status, ask_time, audit_opinion, audit_person, 
+    audit_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from retreat
-    where id = #{id,jdbcType=BIGINT}
+    where retreat_id = #{retreatId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from retreat
-    where id = #{id,jdbcType=BIGINT}
+    where retreat_id = #{retreatId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Retreat" >
-    insert into retreat (id, customer_id, retreat_type, 
-      reason, retreat_date, apply_date, 
-      remark)
-    values (#{id,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{retreatType,jdbcType=VARCHAR}, 
-      #{reason,jdbcType=VARCHAR}, #{retreatDate,jdbcType=DATE}, #{applyDate,jdbcType=DATE}, 
-      #{remark,jdbcType=VARCHAR})
+    insert into retreat (retreat_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, customer_id, retreat_time, 
+      retreat_type, retreat_reason, status, 
+      ask_time, audit_opinion, audit_person, 
+      audit_time)
+    values (#{retreatId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{customerId,jdbcType=BIGINT}, #{retreatTime,jdbcType=DATE}, 
+      #{retreatType,jdbcType=VARCHAR}, #{retreatReason,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{askTime,jdbcType=DATE}, #{auditOpinion,jdbcType=VARCHAR}, #{auditPerson,jdbcType=VARCHAR}, 
+      #{auditTime,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Retreat" >
     insert into retreat
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
+      <if test="retreatId != null" >
+        retreat_id,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
       </if>
       <if test="customerId != null" >
         customer_id,
       </if>
+      <if test="retreatTime != null" >
+        retreat_time,
+      </if>
       <if test="retreatType != null" >
         retreat_type,
       </if>
-      <if test="reason != null" >
-        reason,
+      <if test="retreatReason != null" >
+        retreat_reason,
       </if>
-      <if test="retreatDate != null" >
-        retreat_date,
+      <if test="status != null" >
+        status,
       </if>
-      <if test="applyDate != null" >
-        apply_date,
+      <if test="askTime != null" >
+        ask_time,
       </if>
-      <if test="remark != null" >
-        remark,
+      <if test="auditOpinion != null" >
+        audit_opinion,
+      </if>
+      <if test="auditPerson != null" >
+        audit_person,
+      </if>
+      <if test="auditTime != null" >
+        audit_time,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
+      <if test="retreatId != null" >
+        #{retreatId,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
       </if>
       <if test="customerId != null" >
         #{customerId,jdbcType=BIGINT},
       </if>
+      <if test="retreatTime != null" >
+        #{retreatTime,jdbcType=DATE},
+      </if>
       <if test="retreatType != null" >
         #{retreatType,jdbcType=VARCHAR},
       </if>
-      <if test="reason != null" >
-        #{reason,jdbcType=VARCHAR},
+      <if test="retreatReason != null" >
+        #{retreatReason,jdbcType=VARCHAR},
       </if>
-      <if test="retreatDate != null" >
-        #{retreatDate,jdbcType=DATE},
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
       </if>
-      <if test="applyDate != null" >
-        #{applyDate,jdbcType=DATE},
+      <if test="askTime != null" >
+        #{askTime,jdbcType=DATE},
       </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
+      <if test="auditOpinion != null" >
+        #{auditOpinion,jdbcType=VARCHAR},
+      </if>
+      <if test="auditPerson != null" >
+        #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=DATE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Retreat" >
     update retreat
     <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
       <if test="customerId != null" >
         customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="retreatTime != null" >
+        retreat_time = #{retreatTime,jdbcType=DATE},
       </if>
       <if test="retreatType != null" >
         retreat_type = #{retreatType,jdbcType=VARCHAR},
       </if>
-      <if test="reason != null" >
-        reason = #{reason,jdbcType=VARCHAR},
+      <if test="retreatReason != null" >
+        retreat_reason = #{retreatReason,jdbcType=VARCHAR},
       </if>
-      <if test="retreatDate != null" >
-        retreat_date = #{retreatDate,jdbcType=DATE},
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="applyDate != null" >
-        apply_date = #{applyDate,jdbcType=DATE},
+      <if test="askTime != null" >
+        ask_time = #{askTime,jdbcType=DATE},
       </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="auditOpinion != null" >
+        audit_opinion = #{auditOpinion,jdbcType=VARCHAR},
+      </if>
+      <if test="auditPerson != null" >
+        audit_person = #{auditPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null" >
+        audit_time = #{auditTime,jdbcType=DATE},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where retreat_id = #{retreatId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Retreat" >
     update retreat
-    set customer_id = #{customerId,jdbcType=BIGINT},
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      retreat_time = #{retreatTime,jdbcType=DATE},
       retreat_type = #{retreatType,jdbcType=VARCHAR},
-      reason = #{reason,jdbcType=VARCHAR},
-      retreat_date = #{retreatDate,jdbcType=DATE},
-      apply_date = #{applyDate,jdbcType=DATE},
-      remark = #{remark,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT}
+      retreat_reason = #{retreatReason,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      ask_time = #{askTime,jdbcType=DATE},
+      audit_opinion = #{auditOpinion,jdbcType=VARCHAR},
+      audit_person = #{auditPerson,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=DATE}
+    where retreat_id = #{retreatId,jdbcType=BIGINT}
   </update>
 </mapper>

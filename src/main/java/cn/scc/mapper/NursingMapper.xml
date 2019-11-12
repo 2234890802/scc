@@ -2,71 +2,118 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.scc.mapper.NursingMapper" >
   <resultMap id="BaseResultMap" type="cn.scc.entity.Nursing" >
-    <id column="nursing_no" property="nursingNo" jdbcType="BIGINT" />
+    <id column="nursing_id" property="nursingId" jdbcType="BIGINT" />
+    <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+    <result column="update_date" property="updateDate" jdbcType="DATE" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="del_flag" property="delFlag" jdbcType="VARCHAR" />
     <result column="nursing_name" property="nursingName" jdbcType="VARCHAR" />
-    <result column="price" property="price" jdbcType="DECIMAL" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-    <result column="service" property="service" jdbcType="VARCHAR" />
+    <result column="nursing_price" property="nursingPrice" jdbcType="DECIMAL" />
+    <result column="describe" property="describe" jdbcType="VARCHAR" />
+    <result column="increment_flag" property="incrementFlag" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    nursing_no, nursing_name, price, remark, service, status
+    nursing_id, create_by, create_date, update_by, update_date, remarks, del_flag, nursing_name, 
+    nursing_price, describe, increment_flag, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from nursing
-    where nursing_no = #{nursingNo,jdbcType=BIGINT}
+    where nursing_id = #{nursingId,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from nursing
-    where nursing_no = #{nursingNo,jdbcType=BIGINT}
+    where nursing_id = #{nursingId,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="cn.scc.entity.Nursing" >
-    insert into nursing (nursing_no, nursing_name, price, 
-      remark, service, status
+    insert into nursing (nursing_id, create_by, create_date, 
+      update_by, update_date, remarks, 
+      del_flag, nursing_name, nursing_price, 
+      describe, increment_flag, status
       )
-    values (#{nursingNo,jdbcType=BIGINT}, #{nursingName,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
-      #{remark,jdbcType=VARCHAR}, #{service,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+    values (#{nursingId,jdbcType=BIGINT}, #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{updateBy,jdbcType=VARCHAR}, #{updateDate,jdbcType=DATE}, #{remarks,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{nursingName,jdbcType=VARCHAR}, #{nursingPrice,jdbcType=DECIMAL}, 
+      #{describe,jdbcType=VARCHAR}, #{incrementFlag,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.scc.entity.Nursing" >
     insert into nursing
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="nursingNo != null" >
-        nursing_no,
+      <if test="nursingId != null" >
+        nursing_id,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+      <if test="updateDate != null" >
+        update_date,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="delFlag != null" >
+        del_flag,
       </if>
       <if test="nursingName != null" >
         nursing_name,
       </if>
-      <if test="price != null" >
-        price,
+      <if test="nursingPrice != null" >
+        nursing_price,
       </if>
-      <if test="remark != null" >
-        remark,
+      <if test="describe != null" >
+        describe,
       </if>
-      <if test="service != null" >
-        service,
+      <if test="incrementFlag != null" >
+        increment_flag,
       </if>
       <if test="status != null" >
         status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="nursingNo != null" >
-        #{nursingNo,jdbcType=BIGINT},
+      <if test="nursingId != null" >
+        #{nursingId,jdbcType=BIGINT},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        #{delFlag,jdbcType=VARCHAR},
       </if>
       <if test="nursingName != null" >
         #{nursingName,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
-        #{price,jdbcType=DECIMAL},
+      <if test="nursingPrice != null" >
+        #{nursingPrice,jdbcType=DECIMAL},
       </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
       </if>
-      <if test="service != null" >
-        #{service,jdbcType=VARCHAR},
+      <if test="incrementFlag != null" >
+        #{incrementFlag,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         #{status,jdbcType=VARCHAR},
@@ -76,31 +123,55 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.scc.entity.Nursing" >
     update nursing
     <set >
+      <if test="createBy != null" >
+        create_by = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=DATE},
+      </if>
+      <if test="updateBy != null" >
+        update_by = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDate != null" >
+        update_date = #{updateDate,jdbcType=DATE},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null" >
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
       <if test="nursingName != null" >
         nursing_name = #{nursingName,jdbcType=VARCHAR},
       </if>
-      <if test="price != null" >
-        price = #{price,jdbcType=DECIMAL},
+      <if test="nursingPrice != null" >
+        nursing_price = #{nursingPrice,jdbcType=DECIMAL},
       </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
+      <if test="describe != null" >
+        describe = #{describe,jdbcType=VARCHAR},
       </if>
-      <if test="service != null" >
-        service = #{service,jdbcType=VARCHAR},
+      <if test="incrementFlag != null" >
+        increment_flag = #{incrementFlag,jdbcType=VARCHAR},
       </if>
       <if test="status != null" >
         status = #{status,jdbcType=VARCHAR},
       </if>
     </set>
-    where nursing_no = #{nursingNo,jdbcType=BIGINT}
+    where nursing_id = #{nursingId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.scc.entity.Nursing" >
     update nursing
-    set nursing_name = #{nursingName,jdbcType=VARCHAR},
-      price = #{price,jdbcType=DECIMAL},
-      remark = #{remark,jdbcType=VARCHAR},
-      service = #{service,jdbcType=VARCHAR},
+    set create_by = #{createBy,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=DATE},
+      update_by = #{updateBy,jdbcType=VARCHAR},
+      update_date = #{updateDate,jdbcType=DATE},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      nursing_name = #{nursingName,jdbcType=VARCHAR},
+      nursing_price = #{nursingPrice,jdbcType=DECIMAL},
+      describe = #{describe,jdbcType=VARCHAR},
+      increment_flag = #{incrementFlag,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR}
-    where nursing_no = #{nursingNo,jdbcType=BIGINT}
+    where nursing_id = #{nursingId,jdbcType=BIGINT}
   </update>
 </mapper>

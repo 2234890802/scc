@@ -1,10 +1,9 @@
 package cn.scc.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
-public class Nursing {
-    private Long nursingId;
+public class CustomerBed {
+    private Long customerBedId;
 
     private String createBy;
 
@@ -18,22 +17,24 @@ public class Nursing {
 
     private String delFlag;
 
-    private String nursingName;
+    private Long customerId;
 
-    private BigDecimal nursingPrice;
+    private Long nursingId;
 
-    private String describe;
+    private Date nursingTime;
 
-    private String incrementFlag;
+    private String nursingContent;
 
-    private String status;
+    private Long nursingCount;
 
-    public Long getNursingId() {
-        return nursingId;
+    private Long staffId;
+
+    public Long getCustomerBedId() {
+        return customerBedId;
     }
 
-    public void setNursingId(Long nursingId) {
-        this.nursingId = nursingId;
+    public void setCustomerBedId(Long customerBedId) {
+        this.customerBedId = customerBedId;
     }
 
     public String getCreateBy() {
@@ -84,43 +85,51 @@ public class Nursing {
         this.delFlag = delFlag == null ? null : delFlag.trim();
     }
 
-    public String getNursingName() {
-        return nursingName;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setNursingName(String nursingName) {
-        this.nursingName = nursingName == null ? null : nursingName.trim();
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
-    public BigDecimal getNursingPrice() {
-        return nursingPrice;
+    public Long getNursingId() {
+        return nursingId;
     }
 
-    public void setNursingPrice(BigDecimal nursingPrice) {
-        this.nursingPrice = nursingPrice;
+    public void setNursingId(Long nursingId) {
+        this.nursingId = nursingId;
     }
 
-    public String getDescribe() {
-        return describe;
+    public Date getNursingTime() {
+        return nursingTime;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe == null ? null : describe.trim();
+    public void setNursingTime(Date nursingTime) {
+        this.nursingTime = nursingTime;
     }
 
-    public String getIncrementFlag() {
-        return incrementFlag;
+    public String getNursingContent() {
+        return nursingContent;
     }
 
-    public void setIncrementFlag(String incrementFlag) {
-        this.incrementFlag = incrementFlag == null ? null : incrementFlag.trim();
+    public void setNursingContent(String nursingContent) {
+        this.nursingContent = nursingContent == null ? null : nursingContent.trim();
     }
 
-    public String getStatus() {
-        return status;
+    public Long getNursingCount() {
+        return nursingCount;
     }
 
-    public void setStatus(String status) {
-        this.status = status == null ? null : status.trim();
+    public void setNursingCount(Long nursingCount) {
+        this.nursingCount = nursingCount;
+    }
+
+    public Long getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(Long staffId) {
+        this.staffId = staffId;
     }
 }

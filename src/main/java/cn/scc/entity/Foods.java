@@ -1,23 +1,36 @@
 package cn.scc.entity;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 public class Foods {
     private Long foodId;
+
+    private String createBy;
+
+    private Date createDate;
+
+    private String updateBy;
+
+    private Date updateDate;
+
+    private String remarks;
+
+    private String delFlag;
 
     private String foodName;
 
     private String foodType;
 
-    private String tag;
+    private String foodTag;
 
-    private BigDecimal price;
+    private BigDecimal foodPrice;
 
-    private String img;
+    private String foodPicture;
 
-    private String steamed;
+    private String momalFlag;
 
-    private String supplyDay;
+    private String supplyWeek;
 
     private String supplyType;
 
@@ -27,6 +40,54 @@ public class Foods {
 
     public void setFoodId(Long foodId) {
         this.foodId = foodId;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy == null ? null : createBy.trim();
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy == null ? null : updateBy.trim();
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks == null ? null : remarks.trim();
+    }
+
+    public String getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag == null ? null : delFlag.trim();
     }
 
     public String getFoodName() {
@@ -45,44 +106,44 @@ public class Foods {
         this.foodType = foodType == null ? null : foodType.trim();
     }
 
-    public String getTag() {
-        return tag;
+    public String getFoodTag() {
+        return foodTag;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag == null ? null : tag.trim();
+    public void setFoodTag(String foodTag) {
+        this.foodTag = foodTag == null ? null : foodTag.trim();
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getFoodPrice() {
+        return foodPrice;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setFoodPrice(BigDecimal foodPrice) {
+        this.foodPrice = foodPrice;
     }
 
-    public String getImg() {
-        return img;
+    public String getFoodPicture() {
+        return foodPicture;
     }
 
-    public void setImg(String img) {
-        this.img = img == null ? null : img.trim();
+    public void setFoodPicture(String foodPicture) {
+        this.foodPicture = foodPicture == null ? null : foodPicture.trim();
     }
 
-    public String getSteamed() {
-        return steamed;
+    public String getMomalFlag() {
+        return momalFlag;
     }
 
-    public void setSteamed(String steamed) {
-        this.steamed = steamed == null ? null : steamed.trim();
+    public void setMomalFlag(String momalFlag) {
+        this.momalFlag = momalFlag == null ? null : momalFlag.trim();
     }
 
-    public String getSupplyDay() {
-        return supplyDay;
+    public String getSupplyWeek() {
+        return supplyWeek;
     }
 
-    public void setSupplyDay(String supplyDay) {
-        this.supplyDay = supplyDay == null ? null : supplyDay.trim();
+    public void setSupplyWeek(String supplyWeek) {
+        this.supplyWeek = supplyWeek == null ? null : supplyWeek.trim();
     }
 
     public String getSupplyType() {
